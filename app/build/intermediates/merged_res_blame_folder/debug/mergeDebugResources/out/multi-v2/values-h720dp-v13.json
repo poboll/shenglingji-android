@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.caiths.shenglingji.app-mergeDebugResources-81:/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/Apple/.gradle/caches/transforms-3/8ed8f5528678737fadc7bb01e9ed4e5e/transformed/appcompat-1.7.0/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

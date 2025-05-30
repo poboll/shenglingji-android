@@ -14,6 +14,20 @@ import java.net.URL
 
 object NetworkUtils {
     private const val TAG = "NetworkUtils"
+    
+    /**
+     * 将localhost URL转换为Android模拟器可访问的URL
+     * 将localhost替换为10.0.2.2，以便Android模拟器可以访问宿主机服务
+     */
+    fun convertLocalhostUrl(url: String?): String? {
+        if (url.isNullOrEmpty()) return url
+        
+        return if (url.contains("localhost")) {
+            url.replace("localhost", "10.0.2.2")
+        } else {
+            url
+        }
+    }
 
     /**
      * 检查设备是否连接到互联网
@@ -79,4 +93,4 @@ object NetworkUtils {
             }
         }
     }
-} 
+}

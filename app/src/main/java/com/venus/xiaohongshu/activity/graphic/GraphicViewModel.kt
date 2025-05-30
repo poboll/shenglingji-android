@@ -152,7 +152,7 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
         val mockAuthor = Author(
             id = mockUserBean.id,
             username = mockUserBean.userName ?: "模拟用户",
-            avatar = mockUserBean.userAvatar
+            _avatar = mockUserBean.userAvatar
         )
         
         // 使用传入的postId，如果为空则生成随机ID
@@ -168,8 +168,8 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
             val mockVideo = VideoMock.provideRandomVideo(context)
             listOf(com.venus.xiaohongshu.data.PostVideo(
                 id = mockVideo.id,
-                videoUrl = mockVideo.videoUrl,
-                coverUrl = mockVideo.coverUrl,
+                _videoUrl = mockVideo.videoUrl,
+                _coverUrl = mockVideo.coverUrl,
                 duration = mockVideo.duration
             ))
         } else null

@@ -41,6 +41,10 @@ import coil3.compose.AsyncImage
 import com.venus.xiaohongshu.R
 import com.venus.xiaohongshu.activity.graphic.GraphicViewModel
 import com.venus.xiaohongshu.ui.common.Divider
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 import kotlin.random.Random
 
 /**
@@ -49,6 +53,46 @@ import kotlin.random.Random
  * @Author: HuaJ1a
  * @Date: 2024/11/28
  */
+
+/**
+ * 格式化时间显示
+ * 将ISO时间格式转换为友好的显示格式
+ */
+fun formatTimeDisplay(isoTimeString: String): String {
+    return try {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+        val date = inputFormat.parse(isoTimeString) ?: return "未知时间"
+        
+        val now = Calendar.getInstance()
+        val postTime = Calendar.getInstance().apply { time = date }
+        
+        val diffInMillis = now.timeInMillis - postTime.timeInMillis
+        val diffInMinutes = diffInMillis / (1000 * 60)
+        val diffInHours = diffInMillis / (1000 * 60 * 60)
+        val diffInDays = diffInMillis / (1000 * 60 * 60 * 24)
+        
+        when {
+            diffInMinutes < 1 -> "刚刚"
+            diffInMinutes < 60 -> "${diffInMinutes}分钟前"
+            diffInHours < 24 && now.get(Calendar.DAY_OF_YEAR) == postTime.get(Calendar.DAY_OF_YEAR) -> {
+                val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+                "今天 ${timeFormat.format(date)}"
+            }
+            diffInDays == 1L -> {
+                val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+                "昨天 ${timeFormat.format(date)}"
+            }
+            diffInDays < 7 -> "${diffInDays}天前"
+            else -> {
+                val dateFormat = SimpleDateFormat("MM-dd HH:mm", Locale.getDefault())
+                dateFormat.format(date)
+            }
+        }
+    } catch (e: Exception) {
+        "时间解析错误"
+    }
+}
+
 @Composable
 fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
     var inputText by remember {
@@ -167,12 +211,33 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
                 )
             }
             
-            Text(
-                text = "发布于: ${postData.createdAt}",
-                fontSize = 12.sp,
-                color = colorResource(R.color.theme_text_gray),
-                modifier = Modifier.padding(start = 16.dp, bottom = 8.dp)
-            )
+            // 发布时间和IP归属地
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 16.dp, end = 16.dp, bottom = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = formatTimeDisplay(postData.createdAt),
+                    fontSize = 12.sp,
+                    color = colorResource(R.color.theme_text_gray)
+                )
+                
+                // IP归属地显示
+                if (!postData.location.isNullOrEmpty()) {
+                    Text(
+                        text = " · ",
+                        fontSize = 12.sp,
+                        color = colorResource(R.color.theme_text_gray)
+                    )
+                    Text(
+                        text = "IP归属地：${postData.location}",
+                        fontSize = 12.sp,
+                        color = colorResource(R.color.theme_text_gray)
+                    )
+                }
+            }
         }
 
         item {
@@ -292,7 +357,7 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
                         fontSize = 14.sp
                     )
                     Text(
-                        text = "评论于: ${commentData.createdAt}",
+                        text = formatTimeDisplay(commentData.createdAt),
                         fontSize = 10.sp,
                         color = colorResource(R.color.theme_text_gray)
                     )

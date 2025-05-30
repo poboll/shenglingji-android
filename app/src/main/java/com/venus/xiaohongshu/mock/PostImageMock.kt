@@ -30,7 +30,7 @@ object PostImageMock {
             images.add(
                 PostImage(
                     id = "$index",
-                    imageUrl = imageUrl,
+                    _imageUrl = imageUrl,
                     position = index,
                     description = if (Random.nextBoolean()) "图片描述 #${index + 1}" else null
                 )
@@ -38,4 +38,4 @@ object PostImageMock {
         }
         return images
     }
-} 
+}

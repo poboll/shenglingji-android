@@ -1,6 +1,7 @@
 package com.venus.xiaohongshu.data
 
 import com.google.gson.annotations.SerializedName
+import com.venus.xiaohongshu.utils.NetworkUtils
 
 /**
  * 帖子列表响应
@@ -60,17 +61,19 @@ data class Post(
 ) {
     // 获取显示用的封面图片
     fun getDisplayCover(): String? {
-        return coverImage 
+        val url = coverImage 
             ?: videos?.firstOrNull()?.coverUrl 
             ?: images?.firstOrNull()?.imageUrl 
             ?: mediaUrl
+        return NetworkUtils.convertLocalhostUrl(url)
     }
     
     // 获取主要媒体URL
     fun getMediaFileUrl(): String? {
-        return mediaUrl 
+        val url = mediaUrl 
             ?: if (mediaType == "video") videos?.firstOrNull()?.videoUrl
             else images?.firstOrNull()?.imageUrl
+        return NetworkUtils.convertLocalhostUrl(url)
     }
     
     // 判断是否为视频帖子
@@ -85,28 +88,40 @@ data class Post(
 data class Author(
     val id: String,
     val username: String,
+    @SerializedName("avatar") private val _avatar: String?
+) {
     val avatar: String?
-)
+        get() = NetworkUtils.convertLocalhostUrl(_avatar)
+}
 
 /**
  * 帖子图片
  */
 data class PostImage(
     val id: String,
-    val imageUrl: String,
+    @SerializedName("imageUrl") private val _imageUrl: String,
     val position: Int,
     val description: String?
-)
+) {
+    val imageUrl: String
+        get() = NetworkUtils.convertLocalhostUrl(_imageUrl) ?: _imageUrl
+}
 
 /**
  * 帖子视频
  */
 data class PostVideo(
     val id: String,
-    val videoUrl: String,
-    val coverUrl: String?,
+    @SerializedName("videoUrl") private val _videoUrl: String,
+    @SerializedName("coverUrl") private val _coverUrl: String?,
     val duration: Int?
-)
+) {
+    val videoUrl: String
+        get() = NetworkUtils.convertLocalhostUrl(_videoUrl) ?: _videoUrl
+    
+    val coverUrl: String?
+        get() = NetworkUtils.convertLocalhostUrl(_coverUrl)
+}
 
 /**
  * 用户模型（兼容旧版本）

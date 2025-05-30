@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.caiths.shenglingji.ui.home.HomeFragment"
+        android:name="com.venus.xiaohongshu.ui.home.HomeFragment"
         android:label="home" />
 
     <fragment
         android:id="@+id/navigation_shop"
-        android:name="com.caiths.shenglingji.ui.shop.ShopFragment"
+        android:name="com.venus.xiaohongshu.ui.shop.ShopFragment"
         android:label="shop" />
 
     <fragment
         android:id="@+id/navigation_message"
-        android:name="com.caiths.shenglingji.ui.message.MessageFragment"
+        android:name="com.venus.xiaohongshu.ui.message.MessageFragment"
         android:label="message"/>
 
     <fragment
         android:id="@+id/navigation_mine"
-        android:name="com.caiths.shenglingji.ui.mine.MineFragment"
+        android:name="com.venus.xiaohongshu.ui.mine.MineFragment"
         android:label="mine"/>
 
 </navigation>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.caiths.shenglingji.app-mergeDebugResources-81:/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "com.venus.xiaohongshu.app-mergeDebugResources-81:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "/Users/Apple/.gradle/caches/transforms-3/8ed8f5528678737fadc7bb01e9ed4e5e/transformed/appcompat-1.7.0/res/values-xlarge-v4/values-xlarge-v4.xml",
+                    "source": "/Users/Apple/.gradle/caches/transforms-4/b7c0c8039fc1196e25587e7ab23fd218/transformed/appcompat-1.7.0/res/values-xlarge-v4/values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

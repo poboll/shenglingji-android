@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.venus.xiaohongshu.api.ApiService
 import com.venus.xiaohongshu.data.model.Post
+import com.venus.xiaohongshu.data.model.PostType
 import com.venus.xiaohongshu.mock.ImageMock
 import com.venus.xiaohongshu.mock.TitleMock
 import com.venus.xiaohongshu.mock.UserMock
@@ -34,11 +35,11 @@ class HomeDataRepository(private val context: Context) {
     private val apiService = ApiService.create()
 
     suspend fun getPlantFeeds(page: Int = 1, limit: Int = 10): Result<List<Post>> {
-        return getFeeds(page, limit, PostType.PLANT)
+        return getFeeds(page, limit, PostCategoryType.PLANT)
     }
     
     suspend fun getAnimalFeeds(page: Int = 1, limit: Int = 10): Result<List<Post>> {
-        return getFeeds(page, limit, PostType.ANIMAL)
+        return getFeeds(page, limit, PostCategoryType.ANIMAL)
     }
 
     suspend fun getGraphicCardList(reload: Boolean = false): MutableList<GraphicCardBean> {
@@ -122,13 +123,13 @@ class HomeDataRepository(private val context: Context) {
         }
     }
 
-    private suspend fun getFeeds(page: Int, limit: Int, type: PostType): Result<List<Post>> {
+    private suspend fun getFeeds(page: Int, limit: Int, type: PostCategoryType): Result<List<Post>> {
         return withContext(Dispatchers.IO) {
             if (isBackendAvailable()) {
                 try {
                     val response = when (type) {
-                        PostType.PLANT -> apiService.getPlantPosts(page, limit)
-                        PostType.ANIMAL -> apiService.getAnimalPosts(page, limit)
+                        PostCategoryType.PLANT -> apiService.getPlantPosts(page, limit)
+                        PostCategoryType.ANIMAL -> apiService.getAnimalPosts(page, limit)
                     }
                     if (response.isSuccessful && response.body() != null && response.body()!!.success) {
                         Result.success(response.body()!!.data.posts)
@@ -150,37 +151,40 @@ class HomeDataRepository(private val context: Context) {
         }
     }
 
-    private fun getMockFeeds(type: PostType): List<Post> {
+    private fun getMockFeeds(type: PostCategoryType): List<Post> {
         val mockPosts = mutableListOf<Post>()
         val titles = when (type) {
-            PostType.PLANT -> TitleMock.providePlantTitles()
-            PostType.ANIMAL -> TitleMock.provideAnimalTitles()
+            PostCategoryType.PLANT -> TitleMock.providePlantTitles()
+            PostCategoryType.ANIMAL -> TitleMock.provideAnimalTitles()
         }
         val imageProvider = when (type) {
-            PostType.PLANT -> ImageMock::providePlantImages
-            PostType.ANIMAL -> ImageMock::provideAnimalImages
+            PostCategoryType.PLANT -> ImageMock::providePlantImages
+            PostCategoryType.ANIMAL -> ImageMock::provideAnimalImages
         }
 
         titles.forEachIndexed { index, title ->
             val userBean = UserMock.provideRandomUser(context)
             val images = imageProvider(context, (1..5).random())
             val videos = if (Math.random() < 0.3) listOf(VideoMock.provideRandomVideo(context)) else emptyList()
+            
+            // 确定内容类型
+            val contentType = if (videos.isNotEmpty()) PostType.VIDEO else PostType.IMAGE
+            
+            // 选择一个封面图片
+            val coverImageUrl = videos.firstOrNull()?.coverUrl ?: images.firstOrNull()
 
             // Map mock data to the Post model structure
             val post = Post(
-                id = index, // Mock ID
+                id = index.toString(), // 转换为String类型
                 title = title,
                 content = "这是来自Mock数据的${type.name.lowercase()}帖子内容: $title",
-                type = if (type == PostType.PLANT) 1 else 2,
+                type = contentType, // 使用PostType枚举
+                category = type.name.lowercase(), // 添加类别
+                coverImage = coverImageUrl, // 封面图片
+                mediaUrl = if (contentType == PostType.VIDEO) videos.firstOrNull()?.videoUrl else images.firstOrNull(), // 媒体URL
                 likes = (10..500).random(),
-                comments = (0..100).random(),
                 views = (100..1000).random(),
-                isHot = Math.random() > 0.7,
-                location = "模拟地点",
-                createdAt = "2023-01-01T12:00:00Z", // Mock date
-                updatedAt = "2023-01-01T12:00:00Z", // Mock date
-                userId = userBean.id.toIntOrNull() ?: index, // Mock user ID
-                author = com.venus.xiaohongshu.data.model.User( // map to new User model
+                author = com.venus.xiaohongshu.data.model.User(
                     id = userBean.id.toIntOrNull() ?: index,
                     username = userBean.userName ?: "Mock User",
                     avatar = userBean.userAvatar,
@@ -195,7 +199,7 @@ class HomeDataRepository(private val context: Context) {
                 ),
                 images = images.mapIndexed { imgIndex, url ->
                     com.venus.xiaohongshu.data.model.PostImage(
-                        id = imgIndex,
+                        id = imgIndex.toString(),
                         imageUrl = url,
                         position = imgIndex,
                         description = null
@@ -203,26 +207,21 @@ class HomeDataRepository(private val context: Context) {
                 },
                 videos = videos.map { video ->
                     com.venus.xiaohongshu.data.model.PostVideo(
-                        id = 0, // Mock video ID
+                        id = "0", // 转换为String类型
                         videoUrl = video.videoUrl,
                         coverUrl = video.coverUrl,
                         duration = video.duration
                     )
                 },
-                // Mock-specific fields for compatibility if UI still uses them directly
-                cover = videos.firstOrNull()?.coverUrl ?: images.firstOrNull(),
-                avatar = userBean.userAvatar,
-                authorName = userBean.userName,
-                description = "这是来自Mock数据的${type.name.lowercase()}帖子内容: $title",
-                likeCount = (10..500).random(),
-                isLiked = Math.random() > 0.5
+                createdAt = "2023-01-01T12:00:00Z",
+                updatedAt = "2023-01-01T12:00:00Z"
             )
             mockPosts.add(post)
         }
         return mockPosts
     }
 
-    enum class PostType {
+    enum class PostCategoryType {
         PLANT, ANIMAL
     }
 }

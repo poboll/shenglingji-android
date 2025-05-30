@@ -98,7 +98,7 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
         modifier = modifier
     ) {
         item {
-            val imageModel = postData.imageUrl ?: postData.image
+            val imageModel = postData.getDisplayCover()
             AsyncImage(
                 model = imageModel,
                 contentDescription = "帖子图片",
@@ -118,16 +118,15 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                val authorAvatarModel = postData.user.userAvatar ?: postData.user.image
                 AsyncImage(
-                    model = authorAvatarModel,
+                    model = postData.author.avatar,
                     contentDescription = "作者头像",
                     modifier = Modifier
                         .size(32.dp)
                         .clip(CircleShape)
                 )
                 Text(
-                    text = postData.user.userName ?: postData.user.name,
+                    text = postData.author.username,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(start = 8.dp)

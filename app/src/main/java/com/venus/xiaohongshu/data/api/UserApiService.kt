@@ -45,4 +45,34 @@ interface UserApiService {
     
     @GET("utils/random-nickname")
     suspend fun getRandomNickname(): Response<Map<String, String>>
-} 
+    
+    @GET("posts")
+    suspend fun getPosts(
+        @Query("page") page: Int = 1,
+        @Query("limit") limit: Int = 20,
+        @Query("type") type: String? = null,
+        @Query("category") category: String? = null
+    ): PostResponse
+    
+    @GET("posts/{id}")
+    suspend fun getPostById(@Path("id") id: String): SinglePostResponse
+}
+
+data class PostResponse(
+    val success: Boolean,
+    val data: List<Post>,
+    val message: String? = null,
+    val pagination: Pagination? = null
+)
+
+data class SinglePostResponse(
+    val success: Boolean,
+    val data: Post,
+    val message: String? = null
+)
+
+data class Pagination(
+    val page: Int,
+    val limit: Int,
+    val total: Int
+)

@@ -26,24 +26,34 @@ data class GraphicCardBean(
         // 从旧的Post模型转换为GraphicCardBean
         fun fromPost(post: OldPost): GraphicCardBean {
             // 判断是否含有视频，决定卡片类型
-            val hasVideo = post.videos?.isNotEmpty() == true
+            // 优先使用post.type字段，如果为null则根据videos判断
+            val hasVideo = when (post.type) {
+                com.venus.xiaohongshu.data.model.PostType.VIDEO -> true
+                com.venus.xiaohongshu.data.model.PostType.IMAGE -> false
+                null -> post.videos?.isNotEmpty() == true || post.isVideoPost()
+            }
             val cardType = if (hasVideo) GraphicCardType.Video else GraphicCardType.Graphic
             
             // 创建用户Bean
             val user = UserBean(
-                id = post.userId.toString(),
-                name = post.getAuthorUsername() ?: "用户",
-                userName = post.getAuthorUsername(),
-                userAvatar = post.getAuthorAvatar()
+                id = post.id,
+                name = post.author.username ?: "用户",
+                userName = post.author.username,
+                userAvatar = post.author.avatar
             )
             
+            // 获取视频URL或者覆盖图像URL
+            val videoUrl = if (hasVideo) {
+                post.videos?.firstOrNull()?.videoUrl ?: post.getVideoMediaUrl()
+            } else null
+            
             return GraphicCardBean(
-                id = post.id.toString(),
+                id = post.id,
                 title = post.title,
                 imageUrl = post.getDisplayCover(),
-                videoUrl = post.videos?.firstOrNull()?.videoUrl,
+                videoUrl = videoUrl,
                 user = user,
-                likes = post.getLikeDisplayCount(),
+                likes = post.likes,
                 type = cardType
             )
         }
@@ -51,8 +61,8 @@ data class GraphicCardBean(
         // 从新的Post模型转换为GraphicCardBean
         fun fromPost(post: Post): GraphicCardBean {
             // 判断是否含有视频，决定卡片类型
-            val hasVideo = post.videos?.isNotEmpty() == true
-            val cardType = if (hasVideo) GraphicCardType.Video else GraphicCardType.Graphic
+            val isVideo = post.mediaType == "video" || post.videos?.isNotEmpty() == true
+            val cardType = if (isVideo) GraphicCardType.Video else GraphicCardType.Graphic
             
             // 创建用户Bean
             val user = UserBean(
@@ -62,11 +72,16 @@ data class GraphicCardBean(
                 userAvatar = post.author.avatar
             )
             
+            // 优先使用视频URL，其次使用mediaUrl
+            val videoUrl = if (isVideo) {
+                post.videos?.firstOrNull()?.videoUrl ?: post.mediaUrl
+            } else null
+            
             return GraphicCardBean(
                 id = post.id,
                 title = post.title,
                 imageUrl = post.getDisplayCover(),
-                videoUrl = post.videos?.firstOrNull()?.videoUrl,
+                videoUrl = videoUrl,
                 user = user,
                 likes = post.likes,
                 type = cardType
@@ -75,7 +90,7 @@ data class GraphicCardBean(
     }
 }
 
-enum class GraphicCardType() {
-    Graphic, // 图文类型
-    Video, // 视频类型
+enum class GraphicCardType {
+    Graphic, // 图片帖子
+    Video    // 视频帖子
 }

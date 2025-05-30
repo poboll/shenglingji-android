@@ -3,44 +3,56 @@ package com.venus.xiaohongshu.data.model
 import com.google.gson.annotations.SerializedName
 
 data class Post(
-    @SerializedName("id") val id: Int,
-    @SerializedName("title") val title: String,
-    @SerializedName("content") val content: String? = null,
-    @SerializedName("type") val type: Int, // 1 for plant, 2 for animal
-    @SerializedName("likes") val likes: Int = 0,
-    @SerializedName("comments") val comments: Int = 0,
-    @SerializedName("views") val views: Int = 0,
-    @SerializedName("isHot") val isHot: Boolean = false,
-    @SerializedName("location") val location: String? = null,
-    @SerializedName("createdAt") val createdAt: String, // Keep as String, parse if needed
-    @SerializedName("updatedAt") val updatedAt: String, // Keep as String, parse if needed
-    @SerializedName("userId") val userId: Int,
-    @SerializedName("author") val author: User, // Renamed from user to author
-    @SerializedName("images") val images: List<PostImage>? = null,
-    @SerializedName("videos") val videos: List<PostVideo>? = null,
-
-    // Fields for mock data compatibility, consider removing if not needed long-term
-    val cover: String? = null, // From mock data, try to map from images or videos
-    val avatar: String? = null, // From mock data, available in author.avatar
-    val authorName: String? = null, // From mock data, available in author.username
-    val description: String? = null, // From mock data, available in content
-    val likeCount: Int? = null, // From mock data, available in likes
-    val isLiked: Boolean? = null // From mock data, not directly available from API
+    val id: String,
+    val title: String,
+    val content: String?,
+    val type: PostType?, // 改为可空类型
+    val category: String?,
+    val coverImage: String?, // 封面图片（视频帖子使用）
+    val mediaUrl: String?, // 媒体文件URL（图片或视频）
+    val likes: Int,
+    val views: Int,
+    val author: User,
+    val images: List<PostImage>?,
+    val videos: List<PostVideo>?,
+    val createdAt: String,
+    val updatedAt: String
 ) {
-    // Helper to get a cover image for display, prioritizing video cover, then first image
+    // 获取显示用的封面图片
     fun getDisplayCover(): String? {
-        return videos?.firstOrNull()?.coverUrl ?: images?.firstOrNull()?.imageUrl ?: cover
+        return when (type) {
+            PostType.VIDEO -> coverImage ?: videos?.firstOrNull()?.videoUrl
+            PostType.IMAGE -> images?.firstOrNull()?.imageUrl ?: mediaUrl
+            null -> {
+                // 当type为null时，优先使用coverImage，然后尝试视频封面，最后使用图片
+                coverImage 
+                    ?: videos?.firstOrNull()?.let { it.coverUrl ?: it.videoUrl }
+                    ?: images?.firstOrNull()?.imageUrl 
+                    ?: mediaUrl
+            }
+        }
     }
+    
+    // 获取媒体文件URL
+    fun getVideoMediaUrl(): String? {
+        return when (type) {
+            PostType.VIDEO -> videos?.firstOrNull()?.videoUrl ?: mediaUrl
+            PostType.IMAGE -> images?.firstOrNull()?.imageUrl ?: mediaUrl
+            null -> {
+                // 当type为null时，优先尝试视频URL，然后使用图片URL
+                videos?.firstOrNull()?.videoUrl 
+                    ?: images?.firstOrNull()?.imageUrl 
+                    ?: mediaUrl
+            }
+        }
+    }
+    
+    // 判断是否为视频帖子
+    fun isVideoPost(): Boolean {
+        return type == PostType.VIDEO || videos?.isNotEmpty() == true
+    }
+}
 
-    fun getAuthorAvatar(): String? {
-        return author.avatar ?: avatar
-    }
-
-    fun getAuthorUsername(): String? {
-        return author.username ?: authorName
-    }
-
-    fun getLikeDisplayCount(): Int {
-        return likeCount ?: likes
-    }
-} 
+enum class PostType {
+    IMAGE, VIDEO
+}

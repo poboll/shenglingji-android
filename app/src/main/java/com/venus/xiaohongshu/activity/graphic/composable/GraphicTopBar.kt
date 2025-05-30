@@ -41,7 +41,7 @@ fun GraphicTopBar(vm: GraphicViewModel) {
             (context as Activity).finish()
         }
         AsyncImage(
-            model = vm.graphicPost?.user?.userAvatar ?: vm.graphicPost?.user?.image,
+            model = vm.graphicPost?.author?.avatar,
             contentDescription = "作者头像",
             modifier = Modifier
                 .padding(start = 10.dp)
@@ -49,7 +49,7 @@ fun GraphicTopBar(vm: GraphicViewModel) {
                 .clip(CircleShape)
         )
         Text(
-            text = vm.graphicPost?.user?.userName ?: vm.graphicPost?.user?.name ?: "用户",
+            text = vm.graphicPost?.author?.username ?: "用户",
             modifier = Modifier.padding(start = 10.dp)
         )
         Spacer(modifier = Modifier.weight(1f))

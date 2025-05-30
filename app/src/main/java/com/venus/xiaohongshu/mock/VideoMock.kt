@@ -32,7 +32,7 @@ object VideoMock {
         val duration = Random.nextInt(10, 120) // 10-120秒的随机时长
         
         return PostVideo(
-            id = 0,
+            id = "0",
             videoUrl = videoUrl,
             coverUrl = coverUrl,
             duration = duration

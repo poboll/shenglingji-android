@@ -7,9 +7,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.venus.xiaohongshu.data.Post
 import com.venus.xiaohongshu.data.model.Post as OldPost
+import com.venus.xiaohongshu.data.model.PostType
 import com.venus.xiaohongshu.network.RetrofitClient
 import com.venus.xiaohongshu.ui.home.HomeDataRepository
 import com.venus.xiaohongshu.ui.home.bean.GraphicCardBean
+import com.venus.xiaohongshu.ui.home.bean.GraphicCardType
+import com.venus.xiaohongshu.ui.home.bean.UserBean
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
@@ -104,13 +107,45 @@ class DiscoveryViewModel(application: Application) : AndroidViewModel(applicatio
         // 使用原有的repository获取本地模拟数据
         repository.getPlantFeeds().onSuccess { oldPosts ->
             val graphicCards = oldPosts.map { post ->
-                GraphicCardBean.fromPost(post as OldPost) 
+                GraphicCardBean.fromPost(post) 
             }.toMutableList()
             graphicCardList.postValue(graphicCards)
         }.onFailure { 
             // Handle failure to load mock data, though unlikely
             Log.e(TAG, "Failed to load mock plant feeds as fallback", it)
             graphicCardList.postValue(mutableListOf()) // Post empty list on fallback failure
+        }
+    }
+    
+    private suspend fun loadPostsFromApi(): List<GraphicCardBean> {
+        return try {
+            val response = RetrofitClient.apiService.getPlantPosts()
+            if (response.success) {
+                response.data.posts.map { post ->
+                    GraphicCardBean(
+                        id = post.id,
+                        title = post.title,
+                        imageUrl = post.getDisplayCover(),
+                        likes = post.likes,
+                        user = UserBean(
+                            id = post.author.id,
+                            name = post.author.username,
+                            image = 0, // 保留兼容性
+                            userAvatar = post.author.avatar
+                        ),
+                        type = when (post.mediaType) {
+                            "video" -> GraphicCardType.Video
+                            else -> GraphicCardType.Graphic
+                        },
+                        videoUrl = if (post.isVideoPost()) post.getMediaFileUrl() else null
+                    )
+                }
+            } else {
+                emptyList()
+            }
+        } catch (e: Exception) {
+            Log.e("DiscoveryViewModel", "加载植物帖子失败", e)
+            emptyList()
         }
     }
 }

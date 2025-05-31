@@ -1532,6 +1532,7 @@ color exo_white
 color exo_white_opacity_70
 color foreground_material_dark
 color foreground_material_light
+color gray
 color gray_100
 color gray_200
 color gray_300
@@ -1545,6 +1546,7 @@ color gray_900
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color info
+color light_gray
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2174,6 +2176,7 @@ color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
 color primary
+color primary_color
 color primary_dark
 color primary_dark_material_dark
 color primary_dark_material_light
@@ -3255,8 +3258,12 @@ drawable ic_call_decline_low
 drawable ic_camera
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete
+drawable ic_download
 drawable ic_edit
 drawable ic_email
+drawable ic_exit
+drawable ic_info
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3271,6 +3278,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_person
 drawable ic_phone
+drawable ic_privacy
 drawable ic_refresh
 drawable ic_search_black_24
 drawable icon_add_friend
@@ -3767,6 +3775,13 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layoutAbout
+id layoutClearCache
+id layoutExit
+id layoutExportData
+id layoutLogout
+id layoutPrivacyPolicy
+id layoutViewLogs
 id left
 id leftToRight
 id legacy
@@ -3908,6 +3923,7 @@ id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
+id progressBar
 id progress_bar
 id progress_circular
 id progress_horizontal
@@ -4207,6 +4223,7 @@ layout activity_edit_profile
 layout activity_login
 layout activity_main
 layout activity_register
+layout activity_settings
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

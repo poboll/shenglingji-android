@@ -1,22 +1,30 @@
 [
     {
-        "merged": "com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_login.xml",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_login.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_register.xml",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_register.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_main.xml",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_main.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_edit_profile.xml",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_edit_profile.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_register.xml",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_register.xml"
+        "merged": "com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_settings.xml",
+        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_settings.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_edit_profile.xml",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_edit_profile.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/fragment_profile.xml",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/fragment_profile.xml",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/fragment_profile.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_main.xml",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_settings.xml",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-mergeDebugResources-82:/layout/activity_login.xml",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_login.xml"
     }
 ]

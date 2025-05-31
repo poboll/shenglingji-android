@@ -39,4 +39,9 @@
     <color name="warning">#FFFFC107</color>
     <color name="error">#FFF44336</color>
     <color name="red_500">#FFF44336</color>
+    
+    <!-- 设置页面颜色 -->
+    <color name="primary_color">#FF4CAF50</color>
+    <color name="light_gray">#FFE0E0E0</color>
+    <color name="gray">#FF757575</color>
 </resources>

@@ -1531,6 +1531,7 @@ int color exo_white 0x7f060064
 int color exo_white_opacity_70 0x7f060065
 int color foreground_material_dark 0x7f060066
 int color foreground_material_light 0x7f060067
+int color gray 0x7f060311
 int color gray_100 0x7f060068
 int color gray_200 0x7f060069
 int color gray_300 0x7f06006a
@@ -1544,6 +1545,7 @@ int color gray_900 0x7f060071
 int color highlighted_text_material_dark 0x7f060072
 int color highlighted_text_material_light 0x7f060073
 int color info 0x7f060074
+int color light_gray 0x7f060312
 int color m3_appbar_overlay_color 0x7f060075
 int color m3_assist_chip_icon_tint_color 0x7f060076
 int color m3_assist_chip_stroke_color 0x7f060077
@@ -2173,6 +2175,7 @@ int color notification_action_color_filter 0x7f0602e6
 int color notification_icon_bg_color 0x7f0602e7
 int color notification_material_background_media_default_color 0x7f0602e8
 int color primary 0x7f0602e9
+int color primary_color 0x7f060313
 int color primary_dark 0x7f0602ea
 int color primary_dark_material_dark 0x7f0602eb
 int color primary_dark_material_light 0x7f0602ec
@@ -3254,8 +3257,12 @@ int drawable ic_call_decline_low 0x7f0800f8
 int drawable ic_camera 0x7f0800f9
 int drawable ic_clear_black_24 0x7f0800fa
 int drawable ic_clock_black_24dp 0x7f0800fb
+int drawable ic_delete 0x7f0801b7
+int drawable ic_download 0x7f0801b8
 int drawable ic_edit 0x7f0800fc
 int drawable ic_email 0x7f0800fd
+int drawable ic_exit 0x7f0801bb
+int drawable ic_info 0x7f0801b9
 int drawable ic_keyboard_black_24dp 0x7f0800fe
 int drawable ic_launcher_background 0x7f0800ff
 int drawable ic_launcher_foreground 0x7f080100
@@ -3270,6 +3277,7 @@ int drawable ic_mtrl_chip_checked_circle 0x7f080108
 int drawable ic_mtrl_chip_close_circle 0x7f080109
 int drawable ic_person 0x7f08010a
 int drawable ic_phone 0x7f08010b
+int drawable ic_privacy 0x7f0801ba
 int drawable ic_refresh 0x7f08010c
 int drawable ic_search_black_24 0x7f08010d
 int drawable icon_add_friend 0x7f08010e
@@ -3766,6 +3774,13 @@ int id jumpToEnd 0x7f0a0141
 int id jumpToStart 0x7f0a0142
 int id labeled 0x7f0a0143
 int id layout 0x7f0a0144
+int id layoutAbout 0x7f0a0289
+int id layoutClearCache 0x7f0a028a
+int id layoutExit 0x7f0a028b
+int id layoutExportData 0x7f0a028c
+int id layoutLogout 0x7f0a028d
+int id layoutPrivacyPolicy 0x7f0a028e
+int id layoutViewLogs 0x7f0a028f
 int id left 0x7f0a0145
 int id leftToRight 0x7f0a0146
 int id legacy 0x7f0a0147
@@ -3907,6 +3922,7 @@ int id pooling_container_listener_holder_tag 0x7f0a01ce
 int id position 0x7f0a01cf
 int id postLayout 0x7f0a01d0
 int id pressed 0x7f0a01d1
+int id progressBar 0x7f0a0288
 int id progress_bar 0x7f0a01d2
 int id progress_circular 0x7f0a01d3
 int id progress_horizontal 0x7f0a01d4
@@ -4206,6 +4222,7 @@ int layout activity_edit_profile 0x7f0d001c
 int layout activity_login 0x7f0d001d
 int layout activity_main 0x7f0d001e
 int layout activity_register 0x7f0d001f
+int layout activity_settings 0x7f0d0083
 int layout custom_dialog 0x7f0d0020
 int layout design_bottom_navigation_item 0x7f0d0021
 int layout design_bottom_sheet_dialog 0x7f0d0022

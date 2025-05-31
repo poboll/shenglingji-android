@@ -39,6 +39,7 @@ import coil3.compose.AsyncImage
 import com.venus.xiaohongshu.R
 import com.venus.xiaohongshu.ui.mine.viewmodel.MineViewModel
 import com.venus.xiaohongshu.ui.user.EditProfileActivity
+import com.venus.xiaohongshu.ui.settings.SettingsActivity
 
 /**
  * Description:
@@ -160,12 +161,9 @@ fun MineScrollingTopContent(
                     .padding(vertical = 5.dp, horizontal = 16.dp)
                     .size(19.dp)
                     .clickable {
-                        // 暂时注释掉SettingsActivity的启动，直到SettingsActivity类可用
-                        // val intent = Intent(context, SettingsActivity::class.java)
-                        // context.startActivity(intent)
-                        
-                        // 临时替代方案，显示消息
-                        android.widget.Toast.makeText(context, "设置功能暂不可用", android.widget.Toast.LENGTH_SHORT).show()
+                        // 启动SettingsActivity
+                        val intent = Intent(context, SettingsActivity::class.java)
+                        context.startActivity(intent)
                     }
             )
         }

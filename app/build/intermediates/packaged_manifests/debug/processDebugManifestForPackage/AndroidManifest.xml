@@ -62,6 +62,7 @@
         <activity android:name="com.venus.xiaohongshu.ui.search.SearchActivity" />
         <activity android:name="com.venus.xiaohongshu.activity.graphic.GraphicActivity" />
         <activity android:name="com.venus.xiaohongshu.activity.video.VideoActivity" />
+        <activity android:name="com.venus.xiaohongshu.ui.settings.SettingsActivity" />
 
         <!-- FileProvider用于拍照 -->
         <provider

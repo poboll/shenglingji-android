@@ -47,6 +47,7 @@
         <activity android:name=".ui.search.SearchActivity"/>
         <activity android:name=".activity.graphic.GraphicActivity"/>
         <activity android:name=".activity.video.VideoActivity"/>
+        <activity android:name=".ui.settings.SettingsActivity"/>
         
         <!-- FileProvider用于拍照 -->
         <provider

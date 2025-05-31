@@ -46,6 +46,7 @@ import com.venus.xiaohongshu.ui.user.EditProfileActivity
  * @author: venus
  * @date: 2024/11/21
  */
+
 @Composable
 fun MineScrollingTopContent(
     vm: MineViewModel,
@@ -158,6 +159,14 @@ fun MineScrollingTopContent(
                     .border(width = 1.dp, color = colorResource(R.color.theme_background_gray), shape = RoundedCornerShape(50))
                     .padding(vertical = 5.dp, horizontal = 16.dp)
                     .size(19.dp)
+                    .clickable {
+                        // 暂时注释掉SettingsActivity的启动，直到SettingsActivity类可用
+                        // val intent = Intent(context, SettingsActivity::class.java)
+                        // context.startActivity(intent)
+                        
+                        // 临时替代方案，显示消息
+                        android.widget.Toast.makeText(context, "设置功能暂不可用", android.widget.Toast.LENGTH_SHORT).show()
+                    }
             )
         }
         

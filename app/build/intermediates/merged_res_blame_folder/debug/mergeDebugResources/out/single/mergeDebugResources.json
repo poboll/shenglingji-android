@@ -1,614 +1,618 @@
 [
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun_2_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun_2_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_return.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_return.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p10.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p10.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_menu_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_menu_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_11.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_11.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/color_nav_icon_selector_color.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/color/nav_icon_selector_color.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_camera.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_camera.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_14.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_14.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/menu/bottom_nav_menu.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p4.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p4.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_smile.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_smile.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_share_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_share_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_18.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_18.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p7.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p7.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_shopping_car_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_shopping_car_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/xml_network_security_config.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/xml/network_security_config.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/raw_video_1.mp4.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/raw/video_1.mp4"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_15.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_15.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/color_nav_icon_selector_color.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/color/nav_icon_selector_color.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_add_friend.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_add_friend.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_aite.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_aite.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_shop.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_shop.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_profile_bg.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/profile_bg.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p9.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p9.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_lock.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_lock.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_launcher_background.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_eye.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_eye.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_more_horiz.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_more_horiz.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p6.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p6.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_shopping_car.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_shopping_car.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p1.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p1.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_6.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_6.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_leaf_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_leaf_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_10.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_10.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_person.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_person.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_chenshan.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_chenshan.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_4.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_4.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_kaquan.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_kaquan.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_headset_mic.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_headset_mic.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/layout_fragment_profile.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_alert.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_alert.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p10.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p10.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p3.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p3.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/navigation_mobile_navigation.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/navigation/mobile_navigation.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_default_avatar.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/default_avatar.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_menu.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_menu.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_20.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_20.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_smile.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_smile.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_clock.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_clock.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_13.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_13.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_qunzi.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_qunzi.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_mine.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_mine.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/xml_file_paths.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/xml/file_paths.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_person_edit.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_person_edit.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_caogao.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_caogao.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_love.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_love.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_17.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_17.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_15.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_15.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_edit.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_edit.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_3.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_3.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_wallet.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_wallet.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_man.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_man.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_write.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_write.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_10.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_10.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_publish.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_publish.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_search.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_search.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun_2_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun_2_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_search_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_search_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_stop_play.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_stop_play.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_7.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_7.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_favorite_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_favorite_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_profile_bg.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/profile_bg.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_6.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_6.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_6.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_6.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_message.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_message.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_shoucang_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_shoucang_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p5.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p5.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_10.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_10.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_dianpu.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_dianpu.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_phone.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_phone.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_publish.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_publish.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_default_avatar.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/default_avatar.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_5.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_5.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_message.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_message.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_menu.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_menu.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_home.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_home.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_camera.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_camera.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_9.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_9.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_leaf.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_leaf.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_wallet.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_wallet.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_write.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_write.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_3.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_3.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p8.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p8.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_logout.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_logout.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_shoucang_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_shoucang_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_aite.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_aite.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/layout_activity_register.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_register.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_setting_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_setting_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_person.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_person.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/layout_activity_edit_profile.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_edit_profile.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_16.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_16.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_refresh.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_refresh.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_camera.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_camera.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_8.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_8.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_return_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_return_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_alert.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_alert.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_favorite_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_favorite_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_refresh.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_refresh.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_phone.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_phone.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_shoucang.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_shoucang.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_12.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_12.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_9.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_9.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_shopping_car.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_shopping_car.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_caogao.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_caogao.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_email.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_email.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun_1.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun_1.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_5.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_5.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_10.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_10.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_7.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_7.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_13.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_13.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p7.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p7.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_4.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_4.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun_1.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun_1.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_close_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_close_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_logo.png.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_logo.png"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_add_friend.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_add_friend.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_camera.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_camera.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_gradient_black_transparent.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/gradient_black_transparent.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/raw_video_3.mp4.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/raw/video_3.mp4"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/raw_video_2.mp4.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/raw/video_2.mp4"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_kaquan.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_kaquan.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/navigation_mobile_navigation.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/navigation/mobile_navigation.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_back.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_back.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_2.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_2.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_person_edit.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_person_edit.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_clock_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_clock_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_1.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_1.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_15.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_15.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_11.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_11.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_arrow_back.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_arrow_back.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_8.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_8.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/xml_data_extraction_rules.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/xml/data_extraction_rules.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_more_horiz.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_more_horiz.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_3.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_3.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_headset_mic.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_headset_mic.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_return.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_return.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_man.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_man.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_return_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_return_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_chenshan.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_chenshan.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p1.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p1.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_gradient_black_transparent.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/gradient_black_transparent.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_erweima.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_erweima.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_clock_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_clock_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/layout_activity_main.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_main.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_12.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_12.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_close.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_close.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/raw_video_1.mp4.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/raw/video_1.mp4"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_home.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_home.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_email.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_email.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_13.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_13.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_share_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_share_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/menu_bottom_nav_menu.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_love.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_love.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_erweima.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_erweima.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_2.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_2.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_20.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_20.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_scan.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_scan.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_7.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_7.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_8.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_8.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_1.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_1.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_cake.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_cake.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_19.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_19.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun_2.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun_2.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_leaf.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_leaf.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_menu_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_menu_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p9.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p9.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_person.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_person.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_picture.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_picture.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_eye.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_eye.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_shop.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_shop.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_close.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_close.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_leaf_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_leaf_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/xml_backup_rules.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_app_logo.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_app_logo.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_4.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_4.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_18.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_18.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_setting.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_setting.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/layout_activity_edit_profile.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_edit_profile.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_favorite_black.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_favorite_black.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/raw_video_2.mp4.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/raw/video_2.mp4"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_14.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_14.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_favorite_black.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_favorite_black.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_11.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_11.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_11.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_11.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_9.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_9.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_share.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_share.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_3.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_3.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_favorite.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_favorite.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_setting_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_setting_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_logo.png.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_logo.png"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/layout_activity_register.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_register.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_14.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_14.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_order.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_order.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_lajitong.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_lajitong.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p8.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p8.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p4.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p4.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_edit.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_edit.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_shoucang.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_shoucang.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_6.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_6.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_stop_play.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_stop_play.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_7.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_7.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_picture.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_picture.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_17.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_17.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_arrow_back.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_arrow_back.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_refresh.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_refresh.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_12.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_12.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/xml_file_paths.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/xml/file_paths.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_shopping_car_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_shopping_car_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_dianpu.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_dianpu.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_13.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_13.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun_2.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun_2.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_favorite.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_favorite.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_scan_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_scan_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_scan_white.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_scan_white.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/xml_backup_rules.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/xml/backup_rules.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_fire.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_fire.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_4.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_4.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_scan.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_scan.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/layout_fragment_profile.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/fragment_profile.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_5.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_5.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_12.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_12.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_mine.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_mine.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_16.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_16.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_2.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_2.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/layout_activity_login.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/layout/activity_login.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_setting.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_setting.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p6.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p6.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_logout.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_logout.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_xinyuan.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_xinyuan.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_lock.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_lock.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_qunzi.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_qunzi.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p11.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p11.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_14.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_14.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_p2.jpeg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/p2.jpeg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_close_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_close_white.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/raw_video_3.mp4.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/raw/video_3.mp4"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_cake.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_cake.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_share.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_share.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_start_play.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_start_play.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_person.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_person.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_refresh.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_refresh.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_fire.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_fire.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p2.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p2.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_15.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_15.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_search.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_search.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_1.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_1.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_lajitong.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_lajitong.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_back.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_back.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_ic_arrow_right.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/ic_arrow_right.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_pinglun.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_pinglun.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_launcher_foreground.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p11.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p11.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_19.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_19.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_5.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_5.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p5.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p5.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_goods_9.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/goods_9.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_image_8.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/image_8.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_order.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_order.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_p3.jpeg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/p3.jpeg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_image_1.jpg.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/image_1.jpg"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_clock.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_clock.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_icon_xinyuan.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/icon_xinyuan.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_goods_2.jpg.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/goods_2.jpg"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/xml_network_security_config.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/xml/network_security_config.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/layout_activity_main.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_main.xml"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_arrow_right.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_arrow_right.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.venus.xiaohongshu.app-debug-83:/drawable_ic_app_logo.xml.flat",
-        "source": "com.venus.xiaohongshu.app-main-85:/drawable/ic_app_logo.xml"
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/drawable_icon_search_white.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/drawable/icon_search_white.xml"
+    },
+    {
+        "merged": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-debug-83:/layout_activity_login.xml.flat",
+        "source": "/Users/Apple/.gradle/daemon/8.7/com.venus.xiaohongshu.app-main-85:/layout/activity_login.xml"
     }
 ]

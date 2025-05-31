@@ -57,7 +57,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
             
             if (result.isSuccess) {
                 result.getOrNull()?.let {
-                    sessionManager.saveAuthUser(it.token, it.user)
+                    sessionManager.saveUserData(it.user, it.token)
                 }
             }
         }
@@ -71,7 +71,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
             
             if (result.isSuccess) {
                 result.getOrNull()?.let {
-                    sessionManager.saveAuthUser(it.token, it.user)
+                    sessionManager.saveUserData(it.user, it.token)
                 }
             }
         }
@@ -86,7 +86,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
             _currentUser.value = result
             
             if (result.isSuccess) {
-                result.getOrNull()?.let { sessionManager.updateUser(it) }
+                result.getOrNull()?.let { sessionManager.saveUserData(it, token) }
             }
         }
     }
@@ -107,7 +107,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
             _updateUserResult.value = result
             
             if (result.isSuccess) {
-                result.getOrNull()?.let { sessionManager.updateUser(it) }
+                result.getOrNull()?.let { sessionManager.saveUserData(it, token) }
             }
         }
     }
@@ -234,6 +234,6 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     
     // 注销
     fun logout() {
-        sessionManager.logout()
+        sessionManager.clearUserData()
     }
 } 

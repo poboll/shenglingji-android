@@ -2,67 +2,88 @@ package com.venus.xiaohongshu.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import android.util.Log
+import com.google.gson.Gson
 import com.venus.xiaohongshu.data.model.User
 
+/**
+ * SessionManager class to handle user session data
+ */
 class SessionManager(context: Context) {
-    private var prefs: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-    
-    private val moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
-        .build()
+    private val pref: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+    private val editor: SharedPreferences.Editor = pref.edit()
+    private val gson = Gson()
     
     companion object {
-        const val PREF_NAME = "shenglingji_prefs"
-        const val USER_TOKEN = "user_token"
-        const val USER_DATA = "user_data"
-        const val IS_LOGGED_IN = "is_logged_in"
+        private const val PREF_NAME = "VenusXiaohongshuPrefs"
+        private const val KEY_USER = "user_data"
+        private const val KEY_TOKEN = "auth_token"
+        private const val KEY_IS_LOGGED_IN = "is_logged_in"
+        private const val TAG = "SessionManager"
     }
     
-    // 保存用户登录信息
-    fun saveAuthUser(token: String, user: User) {
-        val editor = prefs.edit()
-        editor.putString(USER_TOKEN, token)
-        
-        val userAdapter = moshi.adapter(User::class.java)
-        val userJson = userAdapter.toJson(user)
-        editor.putString(USER_DATA, userJson)
-        
-        editor.putBoolean(IS_LOGGED_IN, true)
-        editor.apply()
+    /**
+     * Save user data to shared preferences
+     */
+    fun saveUserData(user: User?, token: String?) {
+        try {
+            if (user != null) {
+                val userJson = gson.toJson(user)
+                editor.putString(KEY_USER, userJson)
+                Log.d(TAG, "User data saved: $userJson")
+            }
+            
+            if (token != null) {
+                editor.putString(KEY_TOKEN, token)
+                Log.d(TAG, "Token saved")
+            }
+            
+            editor.putBoolean(KEY_IS_LOGGED_IN, user != null && token != null)
+            editor.apply()
+        } catch (e: Exception) {
+            Log.e(TAG, "Error saving user data", e)
+        }
     }
     
-    // 获取用户Token
-    fun getToken(): String? {
-        return prefs.getString(USER_TOKEN, null)
-    }
-    
-    // 获取已登录用户信息
+    /**
+     * Get saved user object
+     */
     fun getUser(): User? {
-        val userJson = prefs.getString(USER_DATA, null) ?: return null
-        val userAdapter = moshi.adapter(User::class.java)
-        return userAdapter.fromJson(userJson)
+        val userJson = pref.getString(KEY_USER, null)
+        return try {
+            if (userJson != null) {
+                gson.fromJson(userJson, User::class.java)
+            } else {
+                null
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error retrieving user data", e)
+            null
+        }
     }
     
-    // 更新用户信息
-    fun updateUser(user: User) {
-        val editor = prefs.edit()
-        val userAdapter = moshi.adapter(User::class.java)
-        val userJson = userAdapter.toJson(user)
-        editor.putString(USER_DATA, userJson)
-        editor.apply()
+    /**
+     * Get authentication token
+     */
+    fun getToken(): String? {
+        return pref.getString(KEY_TOKEN, null)
     }
     
-    // 检查用户是否已登录
+    /**
+     * Check if user is logged in
+     */
     fun isLoggedIn(): Boolean {
-        return prefs.getBoolean(IS_LOGGED_IN, false)
+        return pref.getBoolean(KEY_IS_LOGGED_IN, false)
     }
     
-    // 注销用户
-    fun logout() {
-        val editor = prefs.edit()
-        editor.clear()
+    /**
+     * Clear user data from preferences
+     */
+    fun clearUserData() {
+        editor.remove(KEY_USER)
+        editor.remove(KEY_TOKEN)
+        editor.putBoolean(KEY_IS_LOGGED_IN, false)
         editor.apply()
+        Log.d(TAG, "User session cleared")
     }
 } 

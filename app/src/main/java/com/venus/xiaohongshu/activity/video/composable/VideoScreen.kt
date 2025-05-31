@@ -14,9 +14,11 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+import com.venus.xiaohongshu.activity.video.composable.VenusPlayer
 import com.venus.xiaohongshu.R
 import com.venus.xiaohongshu.activity.graphic.composable.IconNumberView
 import com.venus.xiaohongshu.activity.video.VideoViewModel
@@ -55,7 +58,64 @@ fun VideoScreen() {
                 .background(color = Color.Black)
                 .padding(innerPadding)
         ) {
-            VideoBody(vm)
+            when {
+                vm.isLoading -> {
+                    // 显示加载指示器
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            CircularProgressIndicator(color = colorResource(R.color.theme_red))
+                            Text(
+                                text = "正在加载视频...",
+                                color = Color.White,
+                                modifier = Modifier.padding(top = 16.dp)
+                            )
+                        }
+                    }
+                }
+                vm.errorMessage != null -> {
+                    // 显示错误信息
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = "加载失败",
+                                color = Color.White,
+                                fontSize = 18.sp
+                            )
+                            Text(
+                                text = vm.errorMessage ?: "未知错误",
+                                color = Color.Gray,
+                                fontSize = 14.sp,
+                                modifier = Modifier.padding(top = 8.dp)
+                            )
+                        }
+                    }
+                }
+                vm.videoList.isNotEmpty() -> {
+                    VideoBody(vm)
+                }
+                else -> {
+                    // 空状态
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        Text(
+                            text = "暂无视频内容",
+                            color = Color.White
+                        )
+                    }
+                }
+            }
             VideoTopBar()
         }
     }
@@ -64,14 +124,37 @@ fun VideoScreen() {
 @Composable
 fun VideoBody(vm: VideoViewModel) {
     val context = LocalContext.current
-    val pagerState = rememberPagerState { vm.videoList.size }
+    val videoList = vm.videoList
+    val pagerState = rememberPagerState(pageCount = { videoList.size })
     var inputText by remember {
         mutableStateOf(TextFieldValue(""))
     }
+    
+    // 确保页面状态同步
+    LaunchedEffect(videoList.size) {
+        if (videoList.isNotEmpty()) {
+            // 重置页面状态
+            try {
+                pagerState.scrollToPage(0)
+            } catch (e: Exception) {
+                // 忽略可能的异常
+            }
+        }
+    }
+    
+    if (videoList.isEmpty()) {
+        return
+    }
+    
     VerticalPager(
         state = pagerState
-    ) {
-        val item = vm.videoList[it]
+    ) { index ->
+        if (index < 0 || index >= videoList.size) {
+            // 处理索引越界情况
+            return@VerticalPager
+        }
+        
+        val item = videoList[index]
         Column(
             modifier = Modifier.fillMaxSize()
         ) {

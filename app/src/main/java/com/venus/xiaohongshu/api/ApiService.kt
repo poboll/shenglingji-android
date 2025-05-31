@@ -33,10 +33,16 @@ interface ApiService {
     ): Response<PostResponse>
     
     /**
-     * 获取帖子详情
+     * 获取帖子详情 - 支持数字ID
      */
     @GET("posts/{id}")
     suspend fun getPostDetail(@Path("id") postId: Int): Response<Post> // 假设帖子详情直接返回Post模型
+    
+    /**
+     * 获取帖子详情 - 支持字符串ID (如 post-plant-1)
+     */
+    @GET("posts/{id}")
+    suspend fun getPostDetail(@Path("id") postId: String): Response<ApiResponse<Post>>
 
     @GET("health")
     suspend fun healthCheck(): Response<HealthCheckResponse>
@@ -52,4 +58,4 @@ interface ApiService {
             return retrofit.create(ApiService::class.java)
         }
     }
-} 
+}

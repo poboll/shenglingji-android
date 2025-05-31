@@ -53,12 +53,16 @@ class HomeDataRepository(private val context: Context) {
                 )
                 val type = if(Random.nextDouble() < 0.2) GraphicCardType.Video else GraphicCardType.Graphic
                 val video = if (type == GraphicCardType.Video) VideoMock.getRandomVideo() else 0
+                val videoUrl = if (type == GraphicCardType.Video) {
+                    "android.resource://${context.packageName}/${video}"
+                } else null
                 val graphicCardBean = GraphicCardBean(
                     id = UUID.randomUUID().toString(),
                     title = TitleMock.getRandomTitle(),
                     user = user,
                     image = ImageMock.getRandomImage(),
                     video = video,
+                    videoUrl = videoUrl,
                     likes = Random.nextInt(999),
                     type = type
                 )

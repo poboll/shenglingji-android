@@ -26,6 +26,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalContext
@@ -39,6 +41,7 @@ import coil3.compose.AsyncImage
 import com.venus.xiaohongshu.activity.video.composable.VenusPlayer
 import com.venus.xiaohongshu.R
 import com.venus.xiaohongshu.activity.graphic.composable.IconNumberView
+import com.venus.xiaohongshu.activity.graphic.composable.ClickableIconNumberView
 import com.venus.xiaohongshu.activity.video.VideoViewModel
 import kotlin.random.Random
 
@@ -129,6 +132,15 @@ fun VideoBody(vm: VideoViewModel) {
     var inputText by remember {
         mutableStateOf(TextFieldValue(""))
     }
+    val focusRequester = remember { FocusRequester() }
+    
+    // 监听评论输入框焦点状态
+    LaunchedEffect(vm.shouldFocusCommentInput) {
+        if (vm.shouldFocusCommentInput) {
+            focusRequester.requestFocus()
+            vm.resetCommentInputFocus()
+        }
+    }
     
     // 确保页面状态同步
     LaunchedEffect(videoList.size) {
@@ -218,7 +230,8 @@ fun VideoBody(vm: VideoViewModel) {
                     modifier = Modifier
                         .background(Color(0x50FFFFFF), RoundedCornerShape(50))
                         .weight(1f)
-                        .height(30.dp),
+                        .height(30.dp)
+                        .focusRequester(focusRequester),
                     value = inputText,
                     onValueChange = {
                         inputText = it
@@ -251,9 +264,35 @@ fun VideoBody(vm: VideoViewModel) {
                         }
                     }
                 )
-                IconNumberView(image = R.drawable.icon_favorite_white, number = item.likes, textColor = Color.White)
-                IconNumberView(image = R.drawable.icon_shoucang_white, number = Random.nextInt(100, 999), textColor = Color.White)
-                IconNumberView(image = R.drawable.icon_pinglun_2_white, number = Random.nextInt(100, 999), textColor = Color.White)
+                // 点赞按钮
+                ClickableIconNumberView(
+                    image = if (vm.isLiked) R.drawable.icon_favorite_filled else R.drawable.icon_favorite_white,
+                    number = item.likes,
+                    isActive = vm.isLiked,
+                    activeColor = Color.Red,
+                    textColor = Color.White,
+                    onClick = { vm.likePost() }
+                )
+                
+                // 收藏按钮
+                ClickableIconNumberView(
+                    image = if (vm.isBookmarked) R.drawable.icon_shoucang_filled else R.drawable.icon_shoucang_white,
+                    number = Random.nextInt(100, 999),
+                    isActive = vm.isBookmarked,
+                    activeColor = Color(0xFFFFD700), // 金黄色
+                    textColor = Color.White,
+                    onClick = { vm.bookmarkPost() }
+                )
+                
+                // 评论按钮
+                ClickableIconNumberView(
+                    image = R.drawable.icon_pinglun_2_white,
+                    number = Random.nextInt(100, 999),
+                    isActive = false,
+                    activeColor = Color.Gray,
+                    textColor = Color.White,
+                    onClick = { vm.focusCommentInput() }
+                )
             }
         }
     }

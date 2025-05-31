@@ -1,6 +1,7 @@
 package com.venus.xiaohongshu.activity.graphic.composable
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,13 +13,17 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
@@ -41,6 +46,16 @@ fun GraphicBottomBar(vm: GraphicViewModel) {
     var inputText by remember {
         mutableStateOf(TextFieldValue(""))
     }
+    val focusRequester = remember { FocusRequester() }
+    
+    // 监听焦点状态变化
+    LaunchedEffect(vm.shouldFocusCommentInput) {
+        if (vm.shouldFocusCommentInput) {
+            focusRequester.requestFocus()
+            vm.resetCommentInputFocus()
+        }
+    }
+    
     Row(
         modifier = Modifier.fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 10.dp),
@@ -50,7 +65,8 @@ fun GraphicBottomBar(vm: GraphicViewModel) {
             modifier = Modifier
                 .background(colorResource(R.color.theme_background_gray), RoundedCornerShape(50))
                 .weight(1f)
-                .height(30.dp),
+                .height(30.dp)
+                .focusRequester(focusRequester),
             value = inputText,
             onValueChange = {
                 inputText = it
@@ -83,9 +99,32 @@ fun GraphicBottomBar(vm: GraphicViewModel) {
                 }
             }
         )
-        IconNumberView(image = R.drawable.icon_favorite_black, number = vm.graphicPost?.likes ?: 0)
-        IconNumberView(image = R.drawable.icon_shoucang, number = Random.nextInt(100, 999))
-        IconNumberView(image = R.drawable.icon_pinglun_2, number = vm.comments.size)
+        // 点赞按钮
+        ClickableIconNumberView(
+            image = if (vm.isLiked) R.drawable.icon_favorite_filled else R.drawable.icon_favorite_black,
+            number = vm.graphicPost?.likes ?: 0,
+            isActive = vm.isLiked,
+            activeColor = Color.Red,
+            onClick = { vm.likePost() }
+        )
+        
+        // 收藏按钮
+        ClickableIconNumberView(
+            image = if (vm.isBookmarked) R.drawable.icon_shoucang_filled else R.drawable.icon_shoucang,
+            number = Random.nextInt(100, 999),
+            isActive = vm.isBookmarked,
+            activeColor = Color(0xFFFFD700), // 金黄色
+            onClick = { vm.bookmarkPost() }
+        )
+        
+        // 评论按钮
+        ClickableIconNumberView(
+            image = R.drawable.icon_pinglun_2,
+            number = vm.comments.size,
+            isActive = false,
+            activeColor = Color.Gray,
+            onClick = { vm.focusCommentInput() }
+        )
     }
 }
 
@@ -110,6 +149,36 @@ fun IconNumberView(
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(start = 4.dp),
             color = textColor
+        )
+    }
+}
+
+@Composable
+fun ClickableIconNumberView(
+    image: Int,
+    number: Int,
+    isActive: Boolean = false,
+    activeColor: Color = Color.Red,
+    textColor: Color = Color.Unspecified,
+    onClick: () -> Unit
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .padding(start = 10.dp)
+            .clickable { onClick() }
+    ) {
+        AsyncImage(
+            model = image,
+            contentDescription = null,
+            modifier = Modifier.size(24.dp)
+        )
+
+        Text(
+            text = "${number}",
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(start = 4.dp),
+            color = if (isActive) activeColor else textColor
         )
     }
 }

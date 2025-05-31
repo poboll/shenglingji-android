@@ -84,6 +84,7 @@ drawable icon_erweima
 drawable icon_eye
 drawable icon_favorite
 drawable icon_favorite_black
+drawable icon_favorite_filled
 drawable icon_favorite_white
 drawable icon_fire
 drawable icon_headset_mic
@@ -125,6 +126,7 @@ drawable icon_shop
 drawable icon_shopping_car
 drawable icon_shopping_car_white
 drawable icon_shoucang
+drawable icon_shoucang_filled
 drawable icon_shoucang_white
 drawable icon_smile
 drawable icon_stop_play

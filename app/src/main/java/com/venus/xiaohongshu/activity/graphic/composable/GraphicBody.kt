@@ -1,6 +1,7 @@
 package com.venus.xiaohongshu.activity.graphic.composable
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -298,30 +299,123 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
                                     }
                                     innerTextField()
                                 }
-                                AsyncImage(
-                                    model = R.drawable.icon_aite,
-                                    contentDescription = null,
-                                    modifier = Modifier
-                                        .padding(start = 10.dp)
-                                        .size(20.dp)
-                                )
-                                AsyncImage(
-                                    model = R.drawable.icon_smile,
-                                    contentDescription = null,
-                                    modifier = Modifier
-                                        .padding(start = 10.dp)
-                                        .size(20.dp)
-                                )
-                                AsyncImage(
-                                    model = R.drawable.icon_picture,
-                                    contentDescription = null,
-                                    modifier = Modifier
-                                        .padding(start = 10.dp, end = 10.dp)
-                                        .size(20.dp)
-                                )
+                                
+                                // 添加发送按钮，会在输入内容后显示
+                                if (inputText.text.isNotEmpty()) {
+                                    Box(
+                                        modifier = Modifier
+                                            .padding(start = 8.dp, end = 8.dp)
+                                            .clickable(enabled = !vm.isSubmittingComment) {
+                                                if (inputText.text.isNotEmpty()) {
+                                                    vm.postComment(inputText.text)
+                                                    // 成功提交后清空输入框
+                                                    inputText = TextFieldValue("")
+                                                }
+                                            }
+                                    ) {
+                                        if (vm.isSubmittingComment) {
+                                            CircularProgressIndicator(
+                                                modifier = Modifier.size(20.dp),
+                                                strokeWidth = 2.dp,
+                                                color = colorResource(R.color.theme_red)
+                                            )
+                                        } else {
+                                            Text(
+                                                text = "发送",
+                                                color = colorResource(R.color.theme_red),
+                                                fontSize = 14.sp,
+                                                fontWeight = FontWeight.Bold
+                                            )
+                                        }
+                                    }
+                                } else {
+                                    // 当没有内容时显示表情和图片按钮
+                                    AsyncImage(
+                                        model = R.drawable.icon_aite,
+                                        contentDescription = null,
+                                        modifier = Modifier
+                                            .padding(start = 10.dp)
+                                            .size(20.dp)
+                                    )
+                                    AsyncImage(
+                                        model = R.drawable.icon_smile,
+                                        contentDescription = null,
+                                        modifier = Modifier
+                                            .padding(start = 10.dp)
+                                            .size(20.dp)
+                                    )
+                                    AsyncImage(
+                                        model = R.drawable.icon_picture,
+                                        contentDescription = null,
+                                        modifier = Modifier
+                                            .padding(start = 10.dp, end = 10.dp)
+                                            .size(20.dp)
+                                    )
+                                }
                             }
                         }
                     )
+                }
+                
+                // 显示评论错误信息
+                if (vm.commentErrorMessage != null) {
+                    Text(
+                        text = vm.commentErrorMessage ?: "",
+                        color = Color.Red,
+                        fontSize = 12.sp,
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+                }
+            }
+        }
+
+        // 评论加载状态
+        if (vm.isCommentsLoading) {
+            item {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                ) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(24.dp),
+                        color = colorResource(id = R.color.theme_red)
+                    )
+                }
+            }
+        }
+
+        // 评论为空时的提示
+        if (!vm.isCommentsLoading && vm.comments.isEmpty()) {
+            item {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 32.dp, horizontal = 16.dp)
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            text = "🌟",
+                            fontSize = 32.sp
+                        )
+                        Text(
+                            text = "现在还没有人评论哦~",
+                            fontSize = 14.sp,
+                            color = colorResource(R.color.theme_text_gray),
+                            textAlign = TextAlign.Center
+                        )
+                        Text(
+                            text = "快来抢沙发吧！",
+                            fontSize = 12.sp,
+                            color = colorResource(R.color.theme_text_gray),
+                            textAlign = TextAlign.Center
+                        )
+                    }
                 }
             }
         }
@@ -362,19 +456,28 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
                         color = colorResource(R.color.theme_text_gray)
                     )
                 }
-                AsyncImage(
-                    model = R.drawable.icon_favorite_black,
-                    contentDescription = "评论点赞图标",
+                Box(
                     modifier = Modifier
-                        .size(16.dp)
-                        .padding(start = 10.dp)
-                )
-                Text(
-                    text = commentData.likes.toString(),
-                    fontSize = 10.sp,
-                    color = colorResource(R.color.theme_text_gray),
-                    modifier = Modifier.padding(start = 4.dp)
-                )
+                        .clickable { vm.likeComment(commentData.id) }
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        AsyncImage(
+                            model = R.drawable.icon_favorite_black,
+                            contentDescription = "评论点赞图标",
+                            modifier = Modifier
+                                .size(16.dp)
+                                .padding(start = 10.dp)
+                        )
+                        Text(
+                            text = commentData.likes.toString(),
+                            fontSize = 10.sp,
+                            color = colorResource(R.color.theme_text_gray),
+                            modifier = Modifier.padding(start = 4.dp)
+                        )
+                    }
+                }
             }
         }
     }

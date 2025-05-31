@@ -17,6 +17,7 @@ import com.venus.xiaohongshu.mock.TitleMock
 import com.venus.xiaohongshu.mock.UserMock
 import com.venus.xiaohongshu.mock.VideoMock
 import com.venus.xiaohongshu.network.RetrofitClient
+import com.venus.xiaohongshu.utils.SessionManager
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
@@ -30,6 +31,7 @@ import java.io.IOException
 class GraphicViewModel(application: Application): AndroidViewModel(application) {
     
     private val context = application.applicationContext
+    private val sessionManager by lazy { SessionManager(context) }
     
     var id: String = ""
     
@@ -45,12 +47,36 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
     var isLoading by mutableStateOf(false)
         private set
     
+    // 评论加载状态
+    var isCommentsLoading by mutableStateOf(false)
+        private set
+    
+    // 评论提交状态
+    var isSubmittingComment by mutableStateOf(false)
+        private set
+    
     // 错误信息
     var errorMessage by mutableStateOf<String?>(null)
         private set
     
+    // 评论错误信息
+    var commentErrorMessage by mutableStateOf<String?>(null)
+        private set
+    
     // 是否使用Mock数据
     var usingMockData by mutableStateOf(false)
+        private set
+    
+    // 点赞状态
+    var isLiked by mutableStateOf(false)
+        private set
+    
+    // 收藏状态
+    var isBookmarked by mutableStateOf(false)
+        private set
+    
+    // 评论输入框焦点状态
+    var shouldFocusCommentInput by mutableStateOf(false)
         private set
     
     private val TAG = "GraphicViewModel"
@@ -96,8 +122,16 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
                         graphicPost = postData
                         Log.d(TAG, "帖子详情加载成功: $postData")
                     }
-                    // 暂时不加载评论，因为后端还没有实现评论API
-                    // loadComments(postId)
+                    
+                    // 如果帖子中包含评论数据，则直接使用
+                    if (postData.commentsList?.isNotEmpty() == true) {
+                        comments.clear()
+                        comments.addAll(postData.commentsList)
+                        Log.d(TAG, "帖子中包含评论数据，共 ${comments.size} 条")
+                    } else {
+                        // 否则加载评论
+                        loadComments(postId)
+                    }
                 } else {
                     val errorMsg = "API获取帖子详情失败: 未知错误"
                     Log.e(TAG, errorMsg)
@@ -119,6 +153,166 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
                 loadMockPostDetail(postId)
             } finally {
                 isLoading = false
+            }
+        }
+    }
+    
+    /**
+     * 发表评论
+     */
+    fun postComment(content: String) {
+        if (content.isBlank()) {
+            Log.w(TAG, "评论内容为空，无法提交")
+            commentErrorMessage = "评论内容不能为空"
+            return
+        }
+        
+        if (id.isEmpty()) {
+            Log.w(TAG, "帖子ID为空，无法提交评论")
+            commentErrorMessage = "无效的帖子ID"
+            return
+        }
+        
+        viewModelScope.launch {
+            isSubmittingComment = true
+            commentErrorMessage = null
+            
+            try {
+                Log.d(TAG, "正在提交评论，帖子ID: $id")
+                val response = RetrofitClient.apiService.createComment(
+                    postId = id,
+                    content = mapOf("content" to content)
+                )
+                
+                if (response.success) {
+                    val newComment = response.data.firstOrNull()
+                    if (newComment != null) {
+                        // 添加到评论列表头部
+                        comments.add(0, newComment)
+                        Log.d(TAG, "评论提交成功: $newComment")
+                    } else {
+                        Log.w(TAG, "评论提交成功但未返回评论数据")
+                    }
+                } else {
+                    val errorMsg = "提交评论失败: 未知错误"
+                    Log.e(TAG, errorMsg)
+                    commentErrorMessage = errorMsg
+                }
+            } catch (e: Exception) {
+                val errorMsg = when (e) {
+                    is HttpException -> {
+                        if (e.code() == 401) {
+                            "请先登录后再评论"
+                        } else {
+                            "服务器错误(${e.code()}): ${getErrorMessageFromResponse(e)}"
+                        }
+                    }
+                    is IOException -> "网络错误: ${e.message}"
+                    else -> "提交失败: ${e.message}"
+                }
+                Log.e(TAG, "提交评论请求失败: $errorMsg", e)
+                commentErrorMessage = errorMsg
+            } finally {
+                isSubmittingComment = false
+            }
+        }
+    }
+    
+    /**
+     * 点赞帖子
+     */
+    fun likePost() {
+        viewModelScope.launch {
+            try {
+                Log.d(TAG, "正在点赞帖子，帖子ID: $id")
+                
+                // 切换点赞状态
+                isLiked = !isLiked
+                
+                // 更新帖子的点赞数
+                graphicPost?.let { post ->
+                    val newLikes = if (isLiked) post.likes + 1 else post.likes - 1
+                    graphicPost = post.copy(likes = newLikes)
+                }
+                
+                Log.d(TAG, "帖子点赞状态已更新: $isLiked")
+                
+                // 这里可以添加网络请求来同步到服务器
+                // val response = RetrofitClient.apiService.likePost(id)
+                
+            } catch (e: Exception) {
+                Log.e(TAG, "点赞帖子失败: ${e.message}", e)
+                // 如果失败，回滚状态
+                isLiked = !isLiked
+                graphicPost?.let { post ->
+                    val newLikes = if (isLiked) post.likes + 1 else post.likes - 1
+                    graphicPost = post.copy(likes = newLikes)
+                }
+            }
+        }
+    }
+    
+    /**
+     * 收藏帖子
+     */
+    fun bookmarkPost() {
+        viewModelScope.launch {
+            try {
+                Log.d(TAG, "正在收藏帖子，帖子ID: $id")
+                
+                // 切换收藏状态
+                isBookmarked = !isBookmarked
+                
+                Log.d(TAG, "帖子收藏状态已更新: $isBookmarked")
+                
+                // 这里可以添加网络请求来同步到服务器
+                // val response = RetrofitClient.apiService.bookmarkPost(id)
+                
+            } catch (e: Exception) {
+                Log.e(TAG, "收藏帖子失败: ${e.message}", e)
+                // 如果失败，回滚状态
+                isBookmarked = !isBookmarked
+            }
+        }
+    }
+    
+    /**
+     * 触发评论输入框焦点
+     */
+    fun focusCommentInput() {
+        shouldFocusCommentInput = true
+        Log.d(TAG, "触发评论输入框焦点")
+    }
+    
+    /**
+     * 重置评论输入框焦点状态
+     */
+    fun resetCommentInputFocus() {
+        shouldFocusCommentInput = false
+    }
+
+    /**
+     * 点赞评论
+     */
+    fun likeComment(commentId: String) {
+        viewModelScope.launch {
+            try {
+                Log.d(TAG, "正在点赞评论，评论ID: $commentId")
+                val response = RetrofitClient.apiService.likeComment(commentId)
+                
+                if (response.success) {
+                    // 更新本地评论数据的点赞数
+                    val index = comments.indexOfFirst { it.id == commentId }
+                    if (index != -1) {
+                        val updatedComment = comments[index].copy(likes = comments[index].likes + 1)
+                        comments[index] = updatedComment
+                        Log.d(TAG, "评论点赞成功: $updatedComment")
+                    }
+                } else {
+                    Log.e(TAG, "评论点赞失败: 未知错误")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "评论点赞请求失败: ${e.message}", e)
             }
         }
     }
@@ -201,33 +395,83 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
         
         graphicPost = mockPost
         Log.d(TAG, "已加载模拟帖子数据: $mockPost")
+        
+        // 生成模拟评论
+        loadMockComments()
     }
     
     /**
-     * 加载评论（暂时未使用，等待后端实现评论API）
+     * 加载帖子评论
      */
     private fun loadComments(postId: String) {
         viewModelScope.launch {
-            // Comments are often loaded after post details, so isLoading might already be true
-            // If you want separate loading indicators for comments, add another state variable
+            isCommentsLoading = true
+            commentErrorMessage = null
+            
             try {
                 Log.d(TAG, "正在加载评论，帖子ID: $postId")
-                // 注意：后端目前还没有实现评论API，这里保留代码结构
-                // val response = RetrofitClient.apiService.getPostComments(postId)
-                // if (response.success) {
-                //     comments.clear()
-                //     comments.addAll(response.data)
-                //     Log.d(TAG, "评论加载成功，数量: ${response.data.size}")
-                // } else {
-                //     val commentErrorMsg = "API获取评论失败: success=${response.success}"
-                //     Log.e(TAG, commentErrorMsg)
-                // }
+                val response = RetrofitClient.apiService.getPostComments(postId)
+                if (response.success) {
+                    comments.clear()
+                    comments.addAll(response.data)
+                    Log.d(TAG, "评论加载成功，数量: ${response.data.size}")
+                } else {
+                    val commentErrorMsg = "API获取评论失败: success=${response.success}"
+                    Log.e(TAG, commentErrorMsg)
+                    commentErrorMessage = commentErrorMsg
+                    
+                    // 如果加载真实评论失败，但使用了真实帖子数据，则尝试生成模拟评论
+                    if (!usingMockData) {
+                        loadMockComments()
+                    }
+                }
             } catch (e: Exception) {
                 Log.e(TAG, "加载评论网络请求失败: ${e.message}", e)
-                // Optionally set a specific error message for comments
-                // if (errorMessage == null) errorMessage = "加载评论失败: ${e.message}"
+                commentErrorMessage = "加载评论失败: ${e.message}"
+                
+                // 如果加载真实评论失败，但使用了真实帖子数据，则尝试生成模拟评论
+                if (!usingMockData) {
+                    loadMockComments()
+                }
+            } finally {
+                isCommentsLoading = false
             }
         }
+    }
+    
+    /**
+     * 加载模拟评论数据
+     */
+    private fun loadMockComments() {
+        // 生成5-15条随机评论
+        val commentCount = (5..15).random()
+        val mockComments = List(commentCount) { index ->
+            val mockUserBean = UserMock.provideRandomUser(context)
+            val createdTime = System.currentTimeMillis() - (1000 * 60 * 60 * (1..72).random())
+            
+            Comment(
+                id = "mock-comment-$index",
+                postId = id,
+                title = "",
+                content = "这是第${index + 1}条模拟评论，用于测试UI显示。" + 
+                    if (index % 3 == 0) "这是一条稍长的评论内容，可以测试多行文本的显示效果。" else "",
+                likes = (0..50).random(),
+                user = com.venus.xiaohongshu.data.User(
+                    id = mockUserBean.id,
+                    name = mockUserBean.name,
+                    userName = mockUserBean.userName ?: "用户${index + 1}",
+                    userAvatar = mockUserBean.userAvatar,
+                    image = mockUserBean.image.toString()
+                ),
+                createdAt = java.time.Instant.ofEpochMilli(createdTime)
+                    .toString()
+                    .replace("Z", ".000Z")
+            )
+        }
+        
+        comments.clear()
+        comments.addAll(mockComments)
+        Log.d(TAG, "已加载${mockComments.size}条模拟评论")
     }
     
     /**

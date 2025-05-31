@@ -43,6 +43,39 @@ class VideoViewModel(application: Application): AndroidViewModel(application) {
     
     var errorMessage by mutableStateOf<String?>(null)
         private set
+    
+    // 点赞和收藏状态
+    var isLiked by mutableStateOf(false)
+        private set
+    
+    var isBookmarked by mutableStateOf(false)
+        private set
+    
+    // 评论输入框焦点控制状态
+    var shouldFocusCommentInput by mutableStateOf(false)
+        private set
+    
+    // 点赞和收藏功能
+    fun likePost() {
+        isLiked = !isLiked
+        Log.d(TAG, "点赞状态变化: $isLiked")
+    }
+    
+    fun bookmarkPost() {
+        isBookmarked = !isBookmarked
+        Log.d(TAG, "收藏状态变化: $isBookmarked")
+    }
+    
+    // 评论输入框焦点控制功能
+    fun focusCommentInput() {
+        shouldFocusCommentInput = true
+        Log.d(TAG, "触发评论输入框焦点")
+    }
+    
+    fun resetCommentInputFocus() {
+        shouldFocusCommentInput = false
+        Log.d(TAG, "重置评论输入框焦点状态")
+    }
 
     // 可用的本地视频资源列表
     private val localVideos = listOf(

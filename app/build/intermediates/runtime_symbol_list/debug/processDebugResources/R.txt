@@ -3288,6 +3288,7 @@ int drawable icon_erweima 0x7f08011a
 int drawable icon_eye 0x7f08011b
 int drawable icon_favorite 0x7f08011c
 int drawable icon_favorite_black 0x7f08011d
+int drawable icon_favorite_filled 0x7f0801b5
 int drawable icon_favorite_white 0x7f08011e
 int drawable icon_fire 0x7f08011f
 int drawable icon_headset_mic 0x7f080120
@@ -3329,6 +3330,7 @@ int drawable icon_shop 0x7f080143
 int drawable icon_shopping_car 0x7f080144
 int drawable icon_shopping_car_white 0x7f080145
 int drawable icon_shoucang 0x7f080146
+int drawable icon_shoucang_filled 0x7f0801b6
 int drawable icon_shoucang_white 0x7f080147
 int drawable icon_smile 0x7f080148
 int drawable icon_stop_play 0x7f08014a

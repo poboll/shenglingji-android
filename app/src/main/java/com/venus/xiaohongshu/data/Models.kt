@@ -55,6 +55,7 @@ data class Post(
     val author: Author,
     val images: List<PostImage>? = null,
     val videos: List<PostVideo>? = null,
+    val commentsList: List<Comment>? = null, // 评论列表
     @SerializedName("createdAt") val createdAt: String,
     @SerializedName("updatedAt") val updatedAt: String,
     val isHot: Boolean = false

@@ -145,5 +145,5 @@ data class Comment(
     val content: String?,
     val likes: Int,
     val user: User,
-    @SerializedName("created_at") val createdAt: String
+    @SerializedName("createdAt") val createdAt: String
 )

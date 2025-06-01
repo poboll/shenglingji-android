@@ -1,6 +1,7 @@
 package com.venus.xiaohongshu.ui.search.composable
 
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -18,20 +19,28 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.venus.xiaohongshu.R
 
 /**
- * Description:
- *
- * @Author: HuaJ1a
- * @Date: 2024/11/27
+ * 搜索历史记录卡片
+ * 
+ * @param historyList 历史记录列表
+ * @param onClearAll 清空全部历史记录的回调
+ * @param onItemClick 点击历史记录项的回调
+ * @param onItemRemove 删除单个历史记录的回调
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun SearchHistoryCard() {
+fun SearchHistoryCard(
+    historyList: List<String> = emptyList(),
+    onClearAll: () -> Unit = {},
+    onItemClick: (String) -> Unit = {},
+    onItemRemove: (String) -> Unit = {}
+) {
     Column(
         modifier = Modifier.fillMaxWidth()
     ){
@@ -46,38 +55,66 @@ fun SearchHistoryCard() {
             Spacer(modifier = Modifier.weight(1f))
             AsyncImage(
                 model = R.drawable.icon_lajitong,
-                contentDescription = null,
-                modifier = Modifier.size(20.dp)
+                contentDescription = "清空历史记录",
+                modifier = Modifier
+                    .size(20.dp)
+                    .clickable { onClearAll() }
             )
         }
 
-        FlowRow(modifier = Modifier.padding(top = 6.dp)) {
-            HistoryItem("Android compose")
-            HistoryItem("PHP是不是最厉害的语言")
-            HistoryItem("C语言脱发攻略")
-            HistoryItem("C++从入门到入狱")
-            HistoryItem("Android逆向怎么把别人钱包的钱转到自己这里")
-            HistoryItem("血迹怎么可以清除干净")
+        if (historyList.isEmpty()) {
+            Text(
+                text = "暂无搜索历史",
+                color = colorResource(R.color.theme_text_gray),
+                fontSize = 14.sp,
+                modifier = Modifier.padding(top = 12.dp)
+            )
+        } else {
+            FlowRow(modifier = Modifier.padding(top = 6.dp)) {
+                historyList.forEach { item ->
+                    HistoryItem(
+                        text = item,
+                        onItemClick = { onItemClick(item) },
+                        onItemRemove = { onItemRemove(item) }
+                    )
+                }
+            }
         }
     }
 }
 
 @Composable
-fun HistoryItem(text: String) {
-    Box(
-        contentAlignment = Alignment.Center,
+fun HistoryItem(
+    text: String,
+    onItemClick: () -> Unit = {},
+    onItemRemove: () -> Unit = {}
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .padding(top = 6.dp, end = 10.dp)
-            .height(28.dp)
+            .height(32.dp)
             .border(
                 width = 1.dp,
                 color = colorResource(R.color.theme_background_gray),
                 RoundedCornerShape(50)
             )
-            .padding(vertical = 4.dp, horizontal = 8.dp)
+            .clickable(onClick = onItemClick)
+            .padding(start = 12.dp, end = 8.dp, top = 4.dp, bottom = 4.dp)
     ) {
         Text(
-            text = text
+            text = text,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.padding(end = 4.dp)
+        )
+        
+        AsyncImage(
+            model = R.drawable.icon_close,
+            contentDescription = "删除历史记录",
+            modifier = Modifier
+                .size(16.dp)
+                .clickable(onClick = onItemRemove)
         )
     }
 }

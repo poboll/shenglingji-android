@@ -1,5 +1,6 @@
 package com.venus.xiaohongshu.activity.graphic.composable
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -46,6 +47,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 import kotlin.random.Random
 
 /**
@@ -59,38 +61,73 @@ import kotlin.random.Random
  * 格式化时间显示
  * 将ISO时间格式转换为友好的显示格式
  */
-fun formatTimeDisplay(isoTimeString: String): String {
+fun formatTimeDisplay(isoTimeString: String?): String {
+    Log.d("TimeFormat", "开始解析时间: $isoTimeString")
+    
+    if (isoTimeString == null) {
+        Log.d("TimeFormat", "时间字符串为null")
+        return "未知时间"
+    }
+    
     return try {
-        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
-        val date = inputFormat.parse(isoTimeString) ?: return "未知时间"
+        // 手动处理ISO时间格式
+        // 示例: 2025-05-20T07:33:45.000Z
+        val regex = "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2}).*".toRegex()
+        val matchResult = regex.find(isoTimeString)
+        
+        if (matchResult == null) {
+            Log.d("TimeFormat", "正则表达式匹配失败: $isoTimeString")
+            return "格式错误"
+        }
+        
+        val (year, month, day, hour, minute, second) = matchResult.destructured
+        Log.d("TimeFormat", "解析结果: 年=$year, 月=$month, 日=$day, 时=$hour, 分=$minute, 秒=$second")
+        
+        // 创建UTC时间
+        val utcCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        utcCalendar.set(year.toInt(), month.toInt() - 1, day.toInt(), hour.toInt(), minute.toInt(), second.toInt())
+        utcCalendar.set(Calendar.MILLISECOND, 0)
+        val utcDate = utcCalendar.time
+        
+        Log.d("TimeFormat", "UTC时间: $utcDate")
+        
+        // 转换为本地时间显示
+        val localCalendar = Calendar.getInstance()
+        localCalendar.time = utcDate
         
         val now = Calendar.getInstance()
-        val postTime = Calendar.getInstance().apply { time = date }
         
-        val diffInMillis = now.timeInMillis - postTime.timeInMillis
+        val diffInMillis = now.timeInMillis - localCalendar.timeInMillis
         val diffInMinutes = diffInMillis / (1000 * 60)
         val diffInHours = diffInMillis / (1000 * 60 * 60)
         val diffInDays = diffInMillis / (1000 * 60 * 60 * 24)
         
-        when {
+        Log.d("TimeFormat", "时间差: ${diffInMinutes}分钟, ${diffInHours}小时, ${diffInDays}天")
+        
+        val result = when {
             diffInMinutes < 1 -> "刚刚"
             diffInMinutes < 60 -> "${diffInMinutes}分钟前"
-            diffInHours < 24 && now.get(Calendar.DAY_OF_YEAR) == postTime.get(Calendar.DAY_OF_YEAR) -> {
+            diffInHours < 24 && now.get(Calendar.DAY_OF_YEAR) == localCalendar.get(Calendar.DAY_OF_YEAR) -> {
                 val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
-                "今天 ${timeFormat.format(date)}"
+                "今天 ${timeFormat.format(utcDate)}"
             }
             diffInDays == 1L -> {
                 val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
-                "昨天 ${timeFormat.format(date)}"
+                "昨天 ${timeFormat.format(utcDate)}"
             }
             diffInDays < 7 -> "${diffInDays}天前"
             else -> {
                 val dateFormat = SimpleDateFormat("MM-dd HH:mm", Locale.getDefault())
-                dateFormat.format(date)
+                dateFormat.format(utcDate)
             }
         }
+        
+        Log.d("TimeFormat", "最终结果: $result")
+        result
+        
     } catch (e: Exception) {
-        "时间解析错误"
+        Log.e("TimeFormat", "时间解析异常: $isoTimeString", e)
+        "解析错误"
     }
 }
 

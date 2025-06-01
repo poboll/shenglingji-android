@@ -463,9 +463,9 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
                     userAvatar = mockUserBean.userAvatar,
                     image = mockUserBean.image.toString()
                 ),
-                createdAt = java.time.Instant.ofEpochMilli(createdTime)
-                    .toString()
-                    .replace("Z", ".000Z")
+                createdAt = java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", java.util.Locale.getDefault()).apply {
+                    timeZone = java.util.TimeZone.getTimeZone("UTC")
+                }.format(java.util.Date(createdTime))
             )
         }
         

@@ -172,6 +172,13 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
             commentErrorMessage = "无效的帖子ID"
             return
         }
+
+        // 检查用户是否已登录
+        if (!sessionManager.isLoggedIn()) {
+            Log.w(TAG, "用户未登录，无法评论")
+            commentErrorMessage = "请先登录后再评论"
+            return
+        }
         
         viewModelScope.launch {
             isSubmittingComment = true
@@ -185,14 +192,9 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
                 )
                 
                 if (response.success) {
-                    val newComment = response.data.firstOrNull()
-                    if (newComment != null) {
-                        // 添加到评论列表头部
-                        comments.add(0, newComment)
-                        Log.d(TAG, "评论提交成功: $newComment")
-                    } else {
-                        Log.w(TAG, "评论提交成功但未返回评论数据")
-                    }
+                    // 添加到评论列表头部
+                    comments.add(0, response.data)
+                    Log.d(TAG, "评论提交成功: ${response.data}")
                 } else {
                     val errorMsg = "提交评论失败: 未知错误"
                     Log.e(TAG, errorMsg)
@@ -315,6 +317,13 @@ class GraphicViewModel(application: Application): AndroidViewModel(application) 
                 Log.e(TAG, "评论点赞请求失败: ${e.message}", e)
             }
         }
+    }
+    
+    /**
+     * 检查用户是否已登录
+     */
+    fun isUserLoggedIn(): Boolean {
+        return sessionManager.isLoggedIn()
     }
     
     /**

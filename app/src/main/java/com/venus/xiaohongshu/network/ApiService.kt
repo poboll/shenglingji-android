@@ -1,6 +1,7 @@
 package com.venus.xiaohongshu.network
 
 import com.venus.xiaohongshu.data.CommentResponse
+import com.venus.xiaohongshu.data.CommentListResponse
 import com.venus.xiaohongshu.data.PostDetailResponse
 import com.venus.xiaohongshu.data.PostsResponse
 import retrofit2.http.Body
@@ -71,7 +72,7 @@ interface ApiService {
     @GET("comments/post/{postId}")
     suspend fun getPostComments(
         @Path("postId") postId: String
-    ): CommentResponse
+    ): CommentListResponse
     
     /**
      * 发表评论

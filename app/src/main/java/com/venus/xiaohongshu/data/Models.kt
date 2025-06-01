@@ -30,11 +30,20 @@ data class PostDetailResponse(
 )
 
 /**
- * 评论响应
+ * 评论列表响应
+ */
+data class CommentListResponse(
+    val success: Boolean,
+    val data: List<Comment>
+)
+
+/**
+ * 评论响应 (单个评论)
  */
 data class CommentResponse(
     val success: Boolean,
-    val data: List<Comment>
+    val message: String? = null,
+    val data: Comment
 )
 
 /**

@@ -1,5 +1,6 @@
 package com.venus.xiaohongshu.activity.graphic.composable
 
+import android.content.Intent
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -32,6 +33,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
@@ -43,6 +45,7 @@ import coil3.compose.AsyncImage
 import com.venus.xiaohongshu.R
 import com.venus.xiaohongshu.activity.graphic.GraphicViewModel
 import com.venus.xiaohongshu.ui.common.Divider
+import com.venus.xiaohongshu.ui.user.LoginActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -136,6 +139,8 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
     var inputText by remember {
         mutableStateOf(TextFieldValue(""))
     }
+    
+    val context = LocalContext.current
     
     // 加载帖子详情
     LaunchedEffect(key1 = vm.id) {
@@ -305,93 +310,116 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
                             .size(24.dp)
                             .clip(CircleShape)
                     )
-                    BasicTextField(
-                        modifier = Modifier
-                            .background(colorResource(R.color.theme_background_gray), RoundedCornerShape(50))
-                            .weight(1f)
-                            .height(35.dp),
-                        value = inputText,
-                        onValueChange = {
-                            inputText = it
-                        },
-                        cursorBrush = SolidColor(colorResource(R.color.theme_red)),
-                        decorationBox = { innerTextField ->
-                            Row (
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .padding(5.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Box(
+                    
+                    // 如果未登录，显示登录提示
+                    if (!vm.isUserLoggedIn()) {
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .background(colorResource(R.color.theme_background_gray), RoundedCornerShape(50))
+                                .height(35.dp)
+                                .clickable {
+                                    // 跳转到登录页面
+                                    context.startActivity(Intent(context, LoginActivity::class.java))
+                                },
+                            contentAlignment = Alignment.CenterStart
+                        ) {
+                            Text(
+                                text = "请先登录后发表评论",
+                                color = colorResource(R.color.theme_text_gray),
+                                modifier = Modifier.padding(start = 16.dp)
+                            )
+                        }
+                    } else {
+                        // 已登录，显示评论输入框
+                        BasicTextField(
+                            modifier = Modifier
+                                .background(colorResource(R.color.theme_background_gray), RoundedCornerShape(50))
+                                .weight(1f)
+                                .height(35.dp),
+                            value = inputText,
+                            onValueChange = {
+                                inputText = it
+                            },
+                            cursorBrush = SolidColor(colorResource(R.color.theme_red)),
+                            decorationBox = { innerTextField ->
+                                Row (
                                     modifier = Modifier
-                                        .weight(1f)
-                                        .padding(start = 10.dp)
+                                        .fillMaxSize()
+                                        .padding(5.dp),
+                                    verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    if(inputText.text.isEmpty()) {
-                                        Text(
-                                            text = "爱评论的人运气都不差",
-                                            color = colorResource(R.color.theme_text_gray),
-                                            overflow = TextOverflow.Ellipsis
-                                        )
-                                    }
-                                    innerTextField()
-                                }
-                                
-                                // 添加发送按钮，会在输入内容后显示
-                                if (inputText.text.isNotEmpty()) {
                                     Box(
                                         modifier = Modifier
-                                            .padding(start = 8.dp, end = 8.dp)
-                                            .clickable(enabled = !vm.isSubmittingComment) {
-                                                if (inputText.text.isNotEmpty()) {
-                                                    vm.postComment(inputText.text)
-                                                    // 成功提交后清空输入框
-                                                    inputText = TextFieldValue("")
-                                                }
-                                            }
+                                            .weight(1f)
+                                            .padding(start = 10.dp)
                                     ) {
-                                        if (vm.isSubmittingComment) {
-                                            CircularProgressIndicator(
-                                                modifier = Modifier.size(20.dp),
-                                                strokeWidth = 2.dp,
-                                                color = colorResource(R.color.theme_red)
-                                            )
-                                        } else {
+                                        if(inputText.text.isEmpty()) {
                                             Text(
-                                                text = "发送",
-                                                color = colorResource(R.color.theme_red),
-                                                fontSize = 14.sp,
-                                                fontWeight = FontWeight.Bold
+                                                text = "爱评论的人运气都不差",
+                                                color = colorResource(R.color.theme_text_gray),
+                                                overflow = TextOverflow.Ellipsis
                                             )
                                         }
+                                        innerTextField()
                                     }
-                                } else {
-                                    // 当没有内容时显示表情和图片按钮
-                                    AsyncImage(
-                                        model = R.drawable.icon_aite,
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .padding(start = 10.dp)
-                                            .size(20.dp)
-                                    )
-                                    AsyncImage(
-                                        model = R.drawable.icon_smile,
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .padding(start = 10.dp)
-                                            .size(20.dp)
-                                    )
-                                    AsyncImage(
-                                        model = R.drawable.icon_picture,
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .padding(start = 10.dp, end = 10.dp)
-                                            .size(20.dp)
-                                    )
+                                    
+                                    // 添加发送按钮，会在输入内容后显示
+                                    if (inputText.text.isNotEmpty()) {
+                                        Box(
+                                            modifier = Modifier
+                                                .padding(start = 8.dp, end = 8.dp)
+                                                .clickable(enabled = !vm.isSubmittingComment) {
+                                                    if (inputText.text.isNotEmpty()) {
+                                                        vm.postComment(inputText.text)
+                                                        // 成功提交后清空输入框
+                                                        inputText = TextFieldValue("")
+                                                    }
+                                                }
+                                        ) {
+                                            if (vm.isSubmittingComment) {
+                                                CircularProgressIndicator(
+                                                    modifier = Modifier.size(20.dp),
+                                                    strokeWidth = 2.dp,
+                                                    color = colorResource(R.color.theme_red)
+                                                )
+                                            } else {
+                                                Text(
+                                                    text = "发送",
+                                                    color = colorResource(R.color.theme_red),
+                                                    fontSize = 14.sp,
+                                                    fontWeight = FontWeight.Bold
+                                                )
+                                            }
+                                        }
+                                    } else {
+                                        // 当没有内容时显示表情和图片按钮
+                                        AsyncImage(
+                                            model = R.drawable.icon_aite,
+                                            contentDescription = null,
+                                            modifier = Modifier
+                                                .padding(start = 10.dp)
+                                                .size(20.dp)
+                                        )
+                                        AsyncImage(
+                                            model = R.drawable.icon_smile,
+                                            contentDescription = null,
+                                            modifier = Modifier
+                                                .padding(start = 10.dp)
+                                                .size(20.dp)
+                                        )
+                                        AsyncImage(
+                                            model = R.drawable.icon_picture,
+                                            contentDescription = null,
+                                            modifier = Modifier
+                                                .padding(start = 10.dp, end = 10.dp)
+                                                .size(20.dp)
+                                        )
+                                    }
                                 }
                             }
-                        }
-                    )
+                        )
+                    }
                 }
                 
                 // 显示评论错误信息

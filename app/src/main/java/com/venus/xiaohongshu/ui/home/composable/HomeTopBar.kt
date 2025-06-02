@@ -42,7 +42,7 @@ fun HomeTopBar(
     drawerState: DrawerState
 ) {
     val coroutineScope = rememberCoroutineScope()
-    val titleList = listOf("关注", "植物", "动物")
+    val titleList = listOf("测验", "植物", "动物")
     val context = LocalContext.current
     Box {
         ConstraintLayout(

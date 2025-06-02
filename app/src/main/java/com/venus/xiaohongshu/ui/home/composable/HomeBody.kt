@@ -10,7 +10,7 @@ import androidx.compose.ui.res.colorResource
 import com.venus.xiaohongshu.R
 import com.venus.xiaohongshu.ui.home.city.CityPage
 import com.venus.xiaohongshu.ui.home.discovery.DiscoveryPage
-import com.venus.xiaohongshu.ui.home.follow.FollowPage
+import com.venus.xiaohongshu.ui.home.follow.QuizPage
 
 /**
  * Description:
@@ -33,7 +33,7 @@ fun HomeBody(
         ) { page ->
             when(page) {
                 0 -> {
-                    FollowPage()
+                    QuizPage()
                 }
 
                 1 -> {

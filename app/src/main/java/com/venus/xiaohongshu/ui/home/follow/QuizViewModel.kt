@@ -32,6 +32,10 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
     private val _birdIdentifiedCount = MutableLiveData<Int>()
     val birdIdentifiedCount: LiveData<Int> = _birdIdentifiedCount
     
+    // 图片加载状态
+    private val _imageLoadingState = MutableLiveData<ImageLoadingState>(ImageLoadingState.IDLE)
+    val imageLoadingState: LiveData<ImageLoadingState> = _imageLoadingState
+    
     // 已完成的测验ID列表，避免重复出题
     private val completedQuizIds = mutableSetOf<String>()
     
@@ -125,7 +129,7 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
         birdQuizzes.add(
             BirdQuiz(
                 id = "bird_4",
-                imageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ec/Long-tailed_Tit_at_Farmoor_-_geograph.org.uk_-_1122133.jpghttps://dongniao.net/images/p/p820.jpg",
+                imageUrl = "https://dongniao.net/images/p/p820.jpg",
                 options = listOf(
                     QuizOption("opt_1", "长尾山雀"),
                     QuizOption("opt_2", "银喉长尾雀"),
@@ -155,7 +159,7 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
         birdQuizzes.add(
             BirdQuiz(
                 id = "bird_6",
-                imageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/be/Common_ostrich.jpg",
+                imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Common_ostrich.jpg/800px-Common_ostrich.jpg",
                 options = listOf(
                     QuizOption("opt_1", "鸸鹋"),
                     QuizOption("opt_2", "非洲鸵鸟"),
@@ -180,6 +184,7 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             // 模拟加载延迟
             _currentQuiz.value = null
+            _imageLoadingState.value = ImageLoadingState.LOADING
             delay(500)
             
             // 过滤掉已完成的测验
@@ -194,6 +199,9 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
                 // 随机选择一道未完成的测验
                 _currentQuiz.value = availableQuizzes.random()
             }
+            
+            // 设置图片为正在加载状态
+            _imageLoadingState.value = ImageLoadingState.READY
             
             Log.d(TAG, "加载测验: ${_currentQuiz.value?.id}")
         }
@@ -228,6 +236,9 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
             // 保存用户进度
             saveUserProgress()
             
+            // 重置图片加载状态
+            _imageLoadingState.value = ImageLoadingState.IDLE
+            
             // 短暂延迟后加载下一题
             delay(1000)
             loadQuiz()
@@ -242,10 +253,29 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
             val quiz = _currentQuiz.value ?: return@launch
             Log.d(TAG, "跳过测验: ${quiz.id}")
             
+            // 重置图片加载状态
+            _imageLoadingState.value = ImageLoadingState.IDLE
+            
             // 短暂延迟后加载下一题
             delay(500)
             loadQuiz()
         }
+    }
+    
+    /**
+     * 通知图片加载成功
+     */
+    fun onImageLoadSuccess() {
+        _imageLoadingState.value = ImageLoadingState.SUCCESS
+        Log.d(TAG, "图片加载成功: ${_currentQuiz.value?.id}")
+    }
+    
+    /**
+     * 通知图片加载失败
+     */
+    fun onImageLoadFailure() {
+        _imageLoadingState.value = ImageLoadingState.ERROR
+        Log.d(TAG, "图片加载失败: ${_currentQuiz.value?.id}")
     }
     
     /**
@@ -283,4 +313,15 @@ data class BirdQuiz(
 data class QuizOption(
     val id: String,
     val text: String
-) 
+)
+
+/**
+ * 图片加载状态
+ */
+enum class ImageLoadingState {
+    IDLE,       // 初始状态
+    LOADING,    // 加载中
+    READY,      // 准备显示
+    SUCCESS,    // 加载成功
+    ERROR       // 加载失败
+} 

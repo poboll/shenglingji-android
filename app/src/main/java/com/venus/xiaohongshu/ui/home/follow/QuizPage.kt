@@ -55,6 +55,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
+import coil3.compose.AsyncImagePainter
 import com.venus.xiaohongshu.R
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.rememberCoroutineScope
@@ -90,6 +91,7 @@ fun QuizPage() {
             // 显示当前测验题目
             DraggableQuizCard(
                 quiz = currentQuiz,
+                viewModel = vm,
                 onSwipeResult = { result ->
                     when (result) {
                         SwipeResult.ACCEPTED -> vm.submitAnswer(currentQuiz.correctOptionId)
@@ -333,16 +335,21 @@ fun QuizIntroCard(
 @Composable
 fun DraggableQuizCard(
     quiz: BirdQuiz,
+    viewModel: QuizViewModel,
     onSwipeResult: (SwipeResult) -> Unit
 ) {
     var showOptions by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf<String?>(null) }
+    var isAnswerCorrect by remember { mutableStateOf<Boolean?>(null) }
+    var showAnswerFeedback by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
     
     LaunchedEffect(quiz) {
         // 重置状态
         showOptions = false
         selectedOption = null
+        isAnswerCorrect = null
+        showAnswerFeedback = false
         // 延迟显示选项
         delay(1000)
         showOptions = true
@@ -372,7 +379,25 @@ fun DraggableQuizCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(250.dp)
-                .clip(RoundedCornerShape(8.dp))
+                .clip(RoundedCornerShape(8.dp)),
+            onState = { state ->
+                when (state) {
+                    is AsyncImagePainter.State.Loading -> {
+                        android.util.Log.d("QuizPage", "Coil Image Loading: ${quiz.imageUrl}")
+                    }
+                    is AsyncImagePainter.State.Success -> {
+                        android.util.Log.d("QuizPage", "Coil Image Success: ${quiz.imageUrl}")
+                        viewModel.onImageLoadSuccess()
+                    }
+                    is AsyncImagePainter.State.Error -> {
+                        android.util.Log.e("QuizPage", "Coil Image Error: ${quiz.imageUrl}, Error: ${state.result.throwable}", state.result.throwable)
+                        viewModel.onImageLoadFailure()
+                    }
+                    is AsyncImagePainter.State.Empty -> {
+                        android.util.Log.d("QuizPage", "Coil Image Empty: ${quiz.imageUrl}")
+                    }
+                }
+            }
         )
         
         // 题目描述
@@ -398,18 +423,105 @@ fun DraggableQuizCard(
                     OptionItem(
                         option = option,
                         isSelected = selectedOption == option.id,
+                        isCorrect = isAnswerCorrect != null && option.id == quiz.correctOptionId,
+                        showCorrectState = showAnswerFeedback,
                         onSelect = { 
-                            selectedOption = option.id
-                            // 延迟一下，让用户看到选择效果
-                            coroutineScope.launch {
-                                delay(500)
-                                if (option.id == quiz.correctOptionId) {
-                                    onSwipeResult(SwipeResult.ACCEPTED)
-                                } else {
-                                    onSwipeResult(SwipeResult.REJECTED)
+                            if (selectedOption == null) { // 防止重复点击
+                                selectedOption = option.id
+                                isAnswerCorrect = option.id == quiz.correctOptionId
+                                showAnswerFeedback = true
+                                
+                                // 延迟一下，让用户看到选择效果
+                                coroutineScope.launch {
+                                    delay(500)
+                                    if (option.id == quiz.correctOptionId) {
+                                        onSwipeResult(SwipeResult.ACCEPTED)
+                                    } else {
+                                        onSwipeResult(SwipeResult.REJECTED)
+                                    }
                                 }
                             }
                         }
+                    )
+                }
+            }
+        }
+        
+        // 答对弹窗提示
+        AnimatedVisibility(
+            visible = isAnswerCorrect == true && showAnswerFeedback,
+            enter = fadeIn(animationSpec = tween(300)),
+            exit = fadeOut(animationSpec = tween(300))
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 16.dp)
+                    .background(
+                        color = Color(0xFF4CAF50).copy(alpha = 0.2f),
+                        shape = RoundedCornerShape(8.dp)
+                    )
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "回答正确!",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF4CAF50)
+                    )
+                    Text(
+                        text = "获得 +5 积分",
+                        fontSize = 16.sp,
+                        color = Color(0xFF4CAF50),
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+                    Text(
+                        text = quiz.description,
+                        fontSize = 14.sp,
+                        color = Color.Gray,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                }
+            }
+        }
+        
+        // 答错提示
+        AnimatedVisibility(
+            visible = isAnswerCorrect == false && showAnswerFeedback,
+            enter = fadeIn(animationSpec = tween(300)),
+            exit = fadeOut(animationSpec = tween(300))
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 16.dp)
+                    .background(
+                        color = colorResource(R.color.theme_red).copy(alpha = 0.2f),
+                        shape = RoundedCornerShape(8.dp)
+                    )
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "回答错误",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = colorResource(R.color.theme_red)
+                    )
+                    Text(
+                        text = "正确答案: ${quiz.options.find { it.id == quiz.correctOptionId }?.text}",
+                        fontSize = 14.sp,
+                        color = Color.Gray,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(top = 8.dp)
                     )
                 }
             }
@@ -439,18 +551,22 @@ fun DraggableQuizCard(
 fun OptionItem(
     option: QuizOption,
     isSelected: Boolean,
+    isCorrect: Boolean = false,
+    showCorrectState: Boolean = false,
     onSelect: () -> Unit
 ) {
-    val backgroundColor = if (isSelected) {
-        colorResource(R.color.theme_red).copy(alpha = 0.2f)
-    } else {
-        Color.Gray.copy(alpha = 0.1f)
+    val backgroundColor = when {
+        showCorrectState && isCorrect -> Color(0xFF4CAF50).copy(alpha = 0.2f) // 正确答案显示绿色
+        isSelected && !showCorrectState -> Color.Gray.copy(alpha = 0.2f) // 选中但未确认结果
+        isSelected && showCorrectState && !isCorrect -> colorResource(R.color.theme_red).copy(alpha = 0.2f) // 选中但错误
+        else -> Color.Gray.copy(alpha = 0.1f) // 默认未选中
     }
     
-    val borderColor = if (isSelected) {
-        colorResource(R.color.theme_red)
-    } else {
-        Color.Transparent
+    val borderColor = when {
+        showCorrectState && isCorrect -> Color(0xFF4CAF50) // 正确答案显示绿色边框
+        isSelected && !showCorrectState -> Color.Gray // 选中但未确认结果
+        isSelected && showCorrectState && !isCorrect -> colorResource(R.color.theme_red) // 选中但错误
+        else -> Color.Transparent // 默认无边框
     }
     
     Row(
@@ -466,7 +582,7 @@ fun OptionItem(
                 color = borderColor,
                 shape = RoundedCornerShape(8.dp)
             )
-            .clickable { onSelect() }
+            .clickable(enabled = !showCorrectState) { onSelect() }
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

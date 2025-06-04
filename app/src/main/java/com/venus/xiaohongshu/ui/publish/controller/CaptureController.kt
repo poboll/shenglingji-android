@@ -16,8 +16,8 @@ import androidx.lifecycle.LifecycleOwner
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/27
+ * @author: poboll
+ * @date: 2024/05/28
  */
 class CaptureController {
 

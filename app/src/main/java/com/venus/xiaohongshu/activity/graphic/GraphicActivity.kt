@@ -12,8 +12,8 @@ import com.venus.xiaohongshu.base.BaseComposeActivity
 /**
  * Description: 图文activity
  *
- * @author: venus
- * @date: 2024/11/22
+ * @author: poboll
+ * @date: 2024/05/23
  */
 const val KEY_ID = "key_id"
 class GraphicActivity: BaseComposeActivity() {

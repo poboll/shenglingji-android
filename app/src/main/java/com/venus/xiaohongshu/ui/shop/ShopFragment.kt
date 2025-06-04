@@ -7,8 +7,8 @@ import com.venus.xiaohongshu.ui.shop.composable.ShopScreen
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/25
  */
 class ShopFragment: BaseComposeFragment() {
     @Composable

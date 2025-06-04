@@ -85,14 +85,14 @@ app/
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/4dbcd70e-4f2d-4b3b-af9d-2d06628aa31d" width="200" alt="首页"></td>
-    <td><img src="https://github.com/user-attachments/assets/937d3f49-2b34-4232-8ec0-5a0793869262" width="200" alt="发现"></td>
-    <td><img src="https://github.com/user-attachments/assets/6e55ca7a-fa58-43a5-bb9a-ebbf74c3717f" width="200" alt="详情"></td>
+    <td><img src="https://raw.githubusercontent.com/poboll/shenglingji/main/public/images/screenshots/home_plants.png" width="200" alt="植物首页"></td>
+    <td><img src="https://raw.githubusercontent.com/poboll/shenglingji/main/public/images/screenshots/home_animals.png" width="200" alt="动物首页"></td>
+    <td><img src="https://raw.githubusercontent.com/poboll/shenglingji/main/public/images/screenshots/shopping.png" width="200" alt="购物页面"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/2b02b5d2-3de6-430d-b533-8a066824a34f" width="200" alt="搜索"></td>
-    <td><img src="https://github.com/user-attachments/assets/1ffc6d3d-31d5-482d-9c88-b5da7af630ee" width="200" alt="个人中心"></td>
-    <td><img src="https://github.com/user-attachments/assets/b02778a4-1fc5-491a-9401-f4ee419e7f14" width="200" alt="设置"></td>
+    <td><img src="https://raw.githubusercontent.com/poboll/shenglingji/main/public/images/screenshots/search.png" width="200" alt="搜索"></td>
+    <td><img src="https://raw.githubusercontent.com/poboll/shenglingji/main/public/images/screenshots/profile.png" width="200" alt="个人中心"></td>
+    <td><img src="https://raw.githubusercontent.com/poboll/shenglingji/main/public/images/screenshots/settings.png" width="200" alt="设置"></td>
   </tr>
 </table>
 

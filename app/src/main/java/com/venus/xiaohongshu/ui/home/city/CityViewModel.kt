@@ -19,8 +19,8 @@ import kotlinx.coroutines.launch
 /**
  * Description: 动物页面ViewModel
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/25
  */
 class CityViewModel(application: Application): AndroidViewModel(application) {
     private val repository = HomeDataRepository(application.applicationContext)

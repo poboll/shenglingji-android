@@ -5,8 +5,8 @@ import com.venus.xiaohongshu.R
 /**
  * Description: 用户bean
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/29
  */
 data class UserBean(
     val id: String,

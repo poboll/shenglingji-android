@@ -9,8 +9,8 @@ import com.venus.xiaohongshu.ui.message.bean.RecommendFriendBean
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/20
+ * @author: poboll
+ * @date: 2024/06/01
  */
 class MessageViewModel: ViewModel() {
     

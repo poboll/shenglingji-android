@@ -23,8 +23,8 @@ import com.venus.xiaohongshu.ui.home.follow.QuizViewModel
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/28
+ * @author: poboll
+ * @date: 2024/05/28
  */
 @Composable
 fun GraphicScreen() {

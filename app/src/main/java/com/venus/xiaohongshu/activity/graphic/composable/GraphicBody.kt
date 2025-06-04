@@ -56,8 +56,8 @@ import kotlin.random.Random
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/28
+ * @author: poboll
+ * @date: 2024/05/29
  */
 
 /**
@@ -186,13 +186,19 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
     ) {
         item {
             val imageModel = postData.getDisplayCover()
+            Log.d("GraphicBody", "加载图片: $imageModel")
             AsyncImage(
                 model = imageModel,
                 contentDescription = "帖子图片",
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(500.dp)
-                    .background(Color.Black),
+                    .background(Color.Black)
+                    .clickable {
+                        Log.d("GraphicBody", "图片被点击: $imageModel")
+                        // 处理图片点击事件
+                        // 可以在这里添加图片预览、放大等功能
+                    },
                 contentScale = ContentScale.Fit
             )
         }
@@ -206,7 +212,7 @@ fun GraphicBody(vm: GraphicViewModel, modifier: Modifier) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 AsyncImage(
-                    model = postData.author.avatar,
+                    model = postData.author.avatar?.trim(),
                     contentDescription = "作者头像",
                     modifier = Modifier
                         .size(32.dp)

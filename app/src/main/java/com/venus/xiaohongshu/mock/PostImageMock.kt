@@ -7,8 +7,8 @@ import kotlin.random.Random
 /**
  * Description: 帖子图片模拟数据
  *
- * @author: venus
- * @date: 2024/11/30
+ * @author: poboll
+ * @date: 2024/05/25
  */
 object PostImageMock {
     
@@ -21,11 +21,8 @@ object PostImageMock {
     fun provideRandomImages(context: Context, count: Int): List<PostImage> {
         val images = mutableListOf<PostImage>()
         repeat(count) { index ->
-            val imageUrl = when (Random.nextInt(3)) {
-                0 -> "https://picsum.photos/800/600?random=${Random.nextInt(1000)}"
-                1 -> "https://source.unsplash.com/random/800x600?sig=${Random.nextInt(1000)}"
-                else -> "android.resource://${context.packageName}/${ImageMock.getRandomImage()}"
-            }
+            // 在离线模式下，全部使用本地资源，确保图片能正常加载
+            val imageUrl = "android.resource://${context.packageName}/${ImageMock.getRandomImage()}"
             
             images.add(
                 PostImage(

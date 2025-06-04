@@ -53,7 +53,7 @@ import com.venus.xiaohongshu.ui.common.BackButton
 fun SearchTopBar(
     initialQuery: String = "",
     onSearch: (String) -> Unit = {},
-    placeholderText: String = "珠海航展",
+    placeholderText: String = "空气凤梨养护指南",
     onBackClick: () -> Unit = {}
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current

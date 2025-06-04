@@ -3,8 +3,8 @@ package com.venus.xiaohongshu.ui.shop.bean
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/19
+ * @author: poboll
+ * @date: 2024/05/27
  */
 data class GoodsBean(
     val id: String,

@@ -3,8 +3,8 @@ package com.venus.xiaohongshu.ui.shop.bean
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/19
+ * @author: poboll
+ * @date: 2024/05/25
  */
 data class MenuBean(
     val icon: Int,

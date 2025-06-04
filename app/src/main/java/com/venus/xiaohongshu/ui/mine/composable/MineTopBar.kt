@@ -19,8 +19,8 @@ import com.venus.xiaohongshu.ui.mine.viewmodel.MineViewModel
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/21
+ * @author: poboll
+ * @date: 2024/05/27
  */
 @Composable
 fun MineTopBar(

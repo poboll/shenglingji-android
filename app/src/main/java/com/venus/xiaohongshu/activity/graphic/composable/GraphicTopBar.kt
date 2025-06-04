@@ -31,8 +31,8 @@ import com.venus.xiaohongshu.ui.common.BackButton
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/28
+ * @author: poboll
+ * @date: 2024/06/03
  */
 @Composable
 fun GraphicTopBar(vm: GraphicViewModel, showBadge: Boolean = false) {
@@ -59,7 +59,7 @@ fun GraphicTopBar(vm: GraphicViewModel, showBadge: Boolean = false) {
                 (context as Activity).finish()
             }
             AsyncImage(
-                model = vm.graphicPost?.author?.avatar,
+                model = vm.graphicPost?.author?.avatar?.trim(),
                 contentDescription = "作者头像",
                 modifier = Modifier
                     .padding(start = 10.dp)

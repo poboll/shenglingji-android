@@ -47,8 +47,8 @@ import com.venus.xiaohongshu.ui.publish.viewmodel.PublishViewModel
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/27
+ * @author: poboll
+ * @date: 2024/05/24
  */
 @Composable
 fun AlbumPage(

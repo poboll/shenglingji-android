@@ -24,7 +24,7 @@ data class User(
         return username ?: userName ?: ""
     }
     fun getDisplayAvatar(): String? {
-        return avatar ?: userAvatar
+        return (avatar ?: userAvatar)?.trim()
     }
 }
 
@@ -80,4 +80,4 @@ data class UpdateProfileRequest(
 data class ChangePasswordRequest(
     val currentPassword: String,
     val newPassword: String
-) 
+)

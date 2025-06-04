@@ -3,8 +3,8 @@ package com.venus.xiaohongshu.ui.search.bean
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/27
+ * @author: poboll
+ * @date: 2024/05/31
  */
 data class HotspotBean(
     val id: String,

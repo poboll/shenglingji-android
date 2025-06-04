@@ -15,8 +15,8 @@ import com.venus.xiaohongshu.base.BaseComposeActivity
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/22
+ * @author: poboll
+ * @date: 2024/05/25
  */
 class VideoActivity: BaseComposeActivity() {
     private val vm: VideoViewModel by viewModels<VideoViewModel>()

@@ -7,8 +7,8 @@ import com.venus.xiaohongshu.ui.home.composable.HomeScreen
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/23
  */
 class HomeFragment: BaseComposeFragment() {
     @Composable

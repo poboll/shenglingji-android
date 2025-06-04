@@ -23,8 +23,8 @@ import com.venus.xiaohongshu.ui.search.SearchActivity
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/19
+ * @author: poboll
+ * @date: 2024/06/03
  */
 @Composable
 fun ShopTopBar() {
@@ -53,7 +53,7 @@ fun ShopTopBar() {
                     .padding(6.dp)
             )
             Text(
-                text = "男生秋冬穿搭",
+                text = "珍稀鸟类识别",
                 color = colorResource(R.color.theme_text_gray),
                 fontSize = 12.sp
             )

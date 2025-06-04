@@ -8,8 +8,8 @@ import kotlin.random.Random
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/22
+ * @author: poboll
+ * @date: 2024/05/23
  */
 object VideoMock {
     
@@ -27,8 +27,8 @@ object VideoMock {
     fun provideRandomVideo(context: Context): PostVideo {
         val videoId = getRandomVideo()
         val videoUrl = "android.resource://${context.packageName}/${videoId}"
-        // 封面使用视频的资源ID模拟
-        val coverUrl = "drawable://${videoId}" 
+        // 封面使用视频的资源ID模拟，使用正确的Android资源URI格式
+        val coverUrl = "android.resource://${context.packageName}/${videoId}" 
         val duration = Random.nextInt(10, 120) // 10-120秒的随机时长
         
         return PostVideo(

@@ -12,8 +12,8 @@ import com.venus.xiaohongshu.ui.message.viewmodel.MessageViewModel
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/20
+ * @author: poboll
+ * @date: 2024/05/25
  */
 @Composable
 fun MessageScreen() {

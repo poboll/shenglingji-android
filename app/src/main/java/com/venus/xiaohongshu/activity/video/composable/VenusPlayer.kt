@@ -53,8 +53,8 @@ import kotlinx.coroutines.delay
 /**
  * Enhanced VenusPlayer with improved scrolling behavior and UI controls
  *
- * @Author: HuaJ1a, Updated
- * @Date: 2024/11/28
+ * @author: poboll
+ * @date: 2024/05/26
  */
 @OptIn(UnstableApi::class)
 @Composable

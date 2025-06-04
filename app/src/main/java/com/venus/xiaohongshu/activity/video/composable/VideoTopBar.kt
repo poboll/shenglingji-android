@@ -21,8 +21,8 @@ import com.venus.xiaohongshu.ui.search.SearchActivity
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/28
+ * @author: poboll
+ * @date: 2024/06/02
  */
 @Composable
 fun VideoTopBar() {

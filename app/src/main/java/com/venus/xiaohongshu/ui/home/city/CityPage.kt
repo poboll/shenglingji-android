@@ -41,8 +41,8 @@ import com.venus.xiaohongshu.ui.home.composable.Shimmer
 /**
  * Description: 动物页面 (原CityPage)
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/06/04
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

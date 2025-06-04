@@ -7,8 +7,8 @@ import kotlin.random.Random
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/18
+ * @author: poboll
+ * @date: 2024/05/27
  */
 object ImageMock {
     private val imageList = listOf(
@@ -84,8 +84,8 @@ object ImageMock {
         val images = mutableListOf<String>()
         repeat(count) {
             val drawableId = plantImages[Random.nextInt(plantImages.size)]
-            // 模拟URL格式，实际上是drawable资源ID
-            images.add("drawable://${drawableId}")
+            // 使用Android资源URI格式，Coil可以正确加载
+            images.add("android.resource://${context.packageName}/${drawableId}")
         }
         return images
     }
@@ -95,8 +95,8 @@ object ImageMock {
         val images = mutableListOf<String>()
         repeat(count) {
             val drawableId = animalImages[Random.nextInt(animalImages.size)]
-            // 模拟URL格式，实际上是drawable资源ID
-            images.add("drawable://${drawableId}")
+            // 使用Android资源URI格式，Coil可以正确加载
+            images.add("android.resource://${context.packageName}/${drawableId}")
         }
         return images
     }

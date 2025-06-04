@@ -7,8 +7,8 @@ import com.venus.xiaohongshu.ui.mine.composable.MineScreen
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/30
  */
 class MineFragment: BaseComposeFragment() {
     @Composable

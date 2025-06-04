@@ -20,8 +20,8 @@ import com.venus.xiaohongshu.R
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/27
+ * @author: poboll
+ * @date: 2024/05/25
  */
 @Composable
 fun SearchHotTitleCard() {
@@ -35,7 +35,7 @@ fun SearchHotTitleCard() {
             modifier = Modifier.size(30.dp)
         )
         Text(
-            text = "小红书热点",
+            text = "生物集热点",
             fontSize = 16.sp,
             fontStyle = FontStyle.Italic,
             fontWeight = FontWeight.Bold,

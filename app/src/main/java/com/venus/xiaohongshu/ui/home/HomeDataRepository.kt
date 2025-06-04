@@ -22,8 +22,8 @@ import kotlin.random.Random
 /**
  * Description: home 数据仓库，代替网络请求
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/06/04
  */
 class HomeDataRepository(private val context: Context) {
     
@@ -56,11 +56,13 @@ class HomeDataRepository(private val context: Context) {
                 val videoUrl = if (type == GraphicCardType.Video) {
                     "android.resource://${context.packageName}/${video}"
                 } else null
+                val image = ImageMock.getRandomImage()
                 val graphicCardBean = GraphicCardBean(
                     id = UUID.randomUUID().toString(),
                     title = TitleMock.getRandomTitle(),
                     user = user,
-                    image = ImageMock.getRandomImage(),
+                    image = image,
+                    imageUrl = "android.resource://${context.packageName}/${image}",
                     video = video,
                     videoUrl = videoUrl,
                     likes = Random.nextInt(999),

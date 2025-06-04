@@ -9,8 +9,8 @@ import com.venus.xiaohongshu.app.TAG
 /**
  * Description: 相册管理类
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/27
+ * @author: poboll
+ * @date: 2024/05/28
  */
 class AlbumController(context: Context) {
     val albumList = mutableListOf<String>()

@@ -19,8 +19,8 @@ import kotlinx.coroutines.launch
 /**
  * Description: 植物页面ViewModel
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/06/03
  */
 class DiscoveryViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = HomeDataRepository(application.applicationContext)

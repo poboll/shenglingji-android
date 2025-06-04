@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.dp
 /**
  * Description: 骨架加载组件 - 图文卡
  *
- * @author: venus
- * @date: 2024/11/18
+ * @author: poboll
+ * @date: 2024/05/26
  */
 
 val barHeight = 10.dp

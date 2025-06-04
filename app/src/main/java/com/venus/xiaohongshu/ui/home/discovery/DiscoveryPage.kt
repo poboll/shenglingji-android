@@ -41,8 +41,8 @@ import com.venus.xiaohongshu.ui.home.composable.Shimmer
 /**
  * Description: 植物页面
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/27
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

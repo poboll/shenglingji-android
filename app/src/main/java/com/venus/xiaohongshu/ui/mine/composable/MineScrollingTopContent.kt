@@ -44,8 +44,8 @@ import com.venus.xiaohongshu.ui.settings.SettingsActivity
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/21
+ * @author: poboll
+ * @date: 2024/06/01
  */
 
 @Composable

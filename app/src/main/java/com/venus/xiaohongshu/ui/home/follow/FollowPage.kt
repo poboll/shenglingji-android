@@ -34,8 +34,8 @@ import com.venus.xiaohongshu.ui.home.bean.UserBean
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/06/01
  */
 @Composable
 fun FollowPage() {

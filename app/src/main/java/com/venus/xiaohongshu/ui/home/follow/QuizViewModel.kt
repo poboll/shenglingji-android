@@ -239,8 +239,8 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
             // 重置图片加载状态
             _imageLoadingState.value = ImageLoadingState.IDLE
             
-            // 短暂延迟后加载下一题
-            delay(1000)
+            // 延迟后加载下一题，给用户更多时间查看结果
+            delay(2500)
             loadQuiz()
         }
     }
@@ -324,4 +324,4 @@ enum class ImageLoadingState {
     READY,      // 准备显示
     SUCCESS,    // 加载成功
     ERROR       // 加载失败
-} 
+}

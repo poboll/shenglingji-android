@@ -23,8 +23,8 @@ import com.venus.xiaohongshu.R
 /**
  * Description:
  *
- * @Author: HuaJ1a
- * @Date: 2024/11/27
+ * @author: poboll
+ * @date: 2024/05/31
  */
 @Composable
 fun SearchGuessCard() {
@@ -55,9 +55,9 @@ fun SearchGuessCard() {
                 modifier = Modifier.size(20.dp)
             )
         }
-        SearchGuessItem("Android compose", "Kotlin")
-        SearchGuessItem("精通python", "iPhone 16pro")
-        SearchGuessItem("小米15", "5090")
+        SearchGuessItem("珍稀鸟类观察", "多肉植物养护")
+        SearchGuessItem("野生动物保护", "室内绿植推荐")
+        SearchGuessItem("蝴蝶生态习性", "花卉品种识别")
     }
 }
 

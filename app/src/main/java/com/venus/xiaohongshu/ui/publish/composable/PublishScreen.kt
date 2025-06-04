@@ -22,8 +22,8 @@ import com.venus.xiaohongshu.ui.publish.viewmodel.PublishViewModel
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/25
  */
 @Composable
 fun PublishScreen() {

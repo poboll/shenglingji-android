@@ -14,8 +14,8 @@ import com.venus.xiaohongshu.ui.shop.viewmodel.ShopViewModel
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/18
+ * @author: poboll
+ * @date: 2024/05/26
  */
 @Preview
 @Composable

@@ -5,8 +5,8 @@ import com.venus.xiaohongshu.ui.home.bean.UserBean
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/21
+ * @author: poboll
+ * @date: 2024/05/30
  */
 data class RecommendFriendBean(
     val id: String,

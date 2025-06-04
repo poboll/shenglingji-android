@@ -7,8 +7,8 @@ import com.venus.xiaohongshu.ui.message.composable.MessageScreen
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/30
  */
 class MessageFragment: BaseComposeFragment() {
     @Composable

@@ -72,9 +72,7 @@ fun QuizPage() {
     val userPoints = vm.userPoints.observeAsState().value ?: 0
     val birdProgress = vm.birdIdentifiedCount.observeAsState().value ?: 0
     
-    LaunchedEffect(Unit) { 
-        vm.loadQuiz()
-    }
+    // 移除自动加载测验，只有用户主动点击开始按钮时才加载
     
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -431,9 +429,9 @@ fun DraggableQuizCard(
                                 isAnswerCorrect = option.id == quiz.correctOptionId
                                 showAnswerFeedback = true
                                 
-                                // 延迟一下，让用户看到选择效果
+                                // 延迟一下，让用户看到选择效果和积分反馈
                                 coroutineScope.launch {
-                                    delay(500)
+                                    delay(2000) // 增加到2秒，让用户有足够时间查看反馈
                                     if (option.id == quiz.correctOptionId) {
                                         onSwipeResult(SwipeResult.ACCEPTED)
                                     } else {
@@ -648,4 +646,4 @@ fun BadgeUnlockEffect(
                 }
         )
     }
-} 
+}

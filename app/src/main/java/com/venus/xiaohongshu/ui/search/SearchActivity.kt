@@ -7,8 +7,8 @@ import com.venus.xiaohongshu.ui.search.composable.SearchScreen
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/18
+ * @author: poboll
+ * @date: 2024/06/01
  */
 class SearchActivity: BaseComposeActivity() {
     

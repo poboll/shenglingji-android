@@ -10,8 +10,8 @@ import kotlin.random.Random
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/19
+ * @author: poboll
+ * @date: 2024/06/03
  */
 object ShopDataRepository {
     private val goodsList = mutableListOf<GoodsBean>()

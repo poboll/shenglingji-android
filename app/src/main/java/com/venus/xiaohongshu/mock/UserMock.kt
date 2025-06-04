@@ -10,8 +10,8 @@ import java.util.UUID
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/29
  */
 object UserMock {
     private val nameList = listOf(
@@ -77,7 +77,7 @@ object UserMock {
             image = image,
             userInfo = userInfo,
             userName = name,
-            userAvatar = "drawable://$image" // 将资源ID转换为类似URL的格式
+            userAvatar = "android.resource://${context.packageName}/${image}" // 使用Android资源URI格式
         )
     }
 }

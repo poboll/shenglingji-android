@@ -8,8 +8,8 @@ import java.util.UUID
 /**
  * Description: 图文卡片bean
  *
- * @author: venus
- * @date: 2024/11/15
+ * @author: poboll
+ * @date: 2024/05/29
  */
 data class GraphicCardBean(
     val id: String = "",

@@ -33,8 +33,8 @@ import com.venus.xiaohongshu.ui.mine.viewmodel.MineViewModel
 /**
  * Description:
  *
- * @author: venus
- * @date: 2024/11/21
+ * @author: poboll
+ * @date: 2024/05/24
  */
 const val initialImageFloat = 100f
 @Composable
